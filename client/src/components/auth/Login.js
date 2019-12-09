@@ -31,7 +31,7 @@ class LoginForm extends Component {
             .then(theLoggedUser => {
                 this.props.setUser(theLoggedUser.data)
                 this.setState({ username: '', password: '' })
-                //this.props.history.push('/coasters')            // REDIRECCIONAMIENTO
+                this.props.history.push('/')            // REDIRECCIONAMIENTO
             })
             .catch(err => {
                 this.handleToastOpen(err.response.data.message)
@@ -55,7 +55,7 @@ class LoginForm extends Component {
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="text" name="password" onChange={this.handleInputChange} value={this.state.password} />
+                        <Form.Control type="password" name="password" onChange={this.handleInputChange} value={this.state.password} />
                     </Form.Group>
                     <Button variant="dark" type="submit">Iniciar sesión</Button>
                 </Form>
@@ -63,7 +63,7 @@ class LoginForm extends Component {
                 <Toast
                     onClose={this.handleToastClose}
                     show={this.state.showToast}
-                    delay={3000}
+                    delay={2000}
                     autohide
                     style={{
                         position: 'fixed',

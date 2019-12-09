@@ -15,6 +15,23 @@ import Profile from './components/pages/Profile'
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
 
+/* CUSTOM RESULTS COMPONENTS */
+import Results from './components/results/results'
+
+/* CUSTOM CONTACT COMPONENTS */
+import Contact from './components/contact/contact'
+
+/* CUSTOM LOTERIA NACIONAL COMPONENTS */
+import ElNiño from './components/LoteriaNacional/ElNiño'
+import Jueves from './components/LoteriaNacional/Jueves'
+import Navidad from './components/LoteriaNacional/Navidad'
+import Sabado from './components/LoteriaNacional/Sabado'
+
+/* CUSTOM JUEGOS COMPONENTS */
+import BonoLoto from './components/Juegos/BonoLoto'
+import ElGordo from './components/Juegos/ElGordo'
+import Euromillon from './components/Juegos/Euromillon'
+import Primitiva from './components/Juegos/Primitiva'
 
 
 class App extends Component {
@@ -58,6 +75,18 @@ class App extends Component {
           <Route path="/profile" render={() =>
             this.state.loggedInUser ? <Profile loggedInUser={this.state.loggedInUser} /> : <Redirect to="/" />
           } />
+          <Route path="/results" render={match => <Results setUser={this.setTheUser} {...match} />} />
+          <Route path="/contact" render={match => <Contact setUser={this.setTheUser} {...match} />} />
+
+          <Route path="/loteriaNacional/jueves" render={match => <Jueves setUser={this.setTheUser} {...match} />} />
+          <Route path="/loteriaNacional/sabado" render={match => <Sabado setUser={this.setTheUser} {...match} />} />
+          <Route path="/loteriaNacional/navidad" render={match => <Navidad setUser={this.setTheUser} {...match} />} />
+          <Route path="/loteriaNacional/elniño" render={match => <ElNiño setUser={this.setTheUser} {...match} />} />
+
+          <Route path="/juegos/bonoLoto" render={match => <BonoLoto setUser={this.setTheUser} {...match} />} />
+          <Route path="/juegos/primitiva" render={match => <Primitiva setUser={this.setTheUser} {...match} />} />
+          <Route path="/juegos/euromillon" render={match => <Euromillon setUser={this.setTheUser} {...match} />} />
+          <Route path="/juegos/elGordo" render={match => <ElGordo setUser={this.setTheUser} {...match} />} />
         </Switch>
 
       </>

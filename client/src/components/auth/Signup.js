@@ -22,6 +22,7 @@ class SignupForm extends Component {
       .then(theNewUser => {
         this.props.setUser(theNewUser.data);
         this.setState({ username: "", password: "" });
+        this.props.history.push('/') 
       })
         .catch(err => this.handleToastOpen(err.response.data.message));
   };
@@ -52,7 +53,7 @@ class SignupForm extends Component {
           <Form.Group>
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
-              type="text"
+              type="password"
               name="password"
               onChange={this.handleInputChange}
               value={this.state.password}
@@ -65,7 +66,7 @@ class SignupForm extends Component {
         <Toast
           onClose={this.handleToastClose}
           show={this.state.showToast}
-          delay={3000}
+          delay={2000}
           autohide
           style={{
             position: "fixed",
