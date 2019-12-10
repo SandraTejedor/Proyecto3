@@ -6,7 +6,8 @@ const PrimitivaSchema = new Schema(
     primitiva: {
       numeros: [],
       complementario: String,
-      reintegro: String
+      reintegro: String,
+      joker: String
     }
   },
   {

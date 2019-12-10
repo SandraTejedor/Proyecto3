@@ -12,12 +12,12 @@ const EuromillonAPI = require("../services/Euromillon.service");
 const EuromillonAPIHandler = new EuromillonAPI();
 
 //bonoloto
-const bonoloto = require("../models/Bonoloto.model");
+const Bonoloto = require("../models/Bonoloto.model");
 const BonolotoAPI = require("../services/Bonoloto.service");
 const BonolotoAPIHandler = new BonolotoAPI();
 
 //gordo
-const gordo = require("../models/Gordo.model");
+const Gordo = require("../models/Gordo.model");
 const GordoAPI = require("../services/Gordo.service");
 const GordoAPIHandler = new GordoAPI();
 
@@ -27,22 +27,27 @@ const LototurfAPI = require("../services/Lototurf.service");
 const LototurfAPIHandler = new LototurfAPI();
 
 //quiniela
-const quiniela = require("../models/Quiniela.model");
+const Quiniela = require("../models/Quiniela.model");
 const QuinielaAPI = require("../services/Quiniela.service");
 const QuinielaAPIHandler = new QuinielaAPI();
 
 //quinigol
-const quinigol = require("../models/Quinigol.model");
+const Quinigol = require("../models/Quinigol.model");
 const QuinigolAPI = require("../services/Quinigol.service");
 const QuinigolAPIHandler = new QuinigolAPI();
 
+//Quintuple
+const Quintuple = require("../models/Quintuple.model");
+const QuintupleAPI = require("../services/Quintuple.service");
+const QuintupleAPIHandler = new QuintupleAPI();
+
 //sabado
-const sabado = require("../models/Sabado.model");
+const Sabado = require("../models/Sabado.model");
 const SabadoAPI = require("../services/Sabado.service");
 const SabadoAPIHandler = new SabadoAPI();
 
 //Jueves
-const jueves = require("../models/Jueves.model");
+const Jueves = require("../models/Jueves.model");
 const JuevesAPI = require("../services/Jueves.service");
 const JuevesAPIHandler = new JuevesAPI();
 
@@ -52,6 +57,15 @@ router.get("/primitiva", (req, res) => {
     .then(resPrimitiva => {
       console.log("respondiendo sandris", resPrimitiva);
       res.status(200).json(resPrimitiva);
+      let obj = {
+        primitiva: {
+          numeros: resPrimitiva[0],
+          complementario: resPrimitiva[1],
+          reintegro: resPrimitiva[2],
+          joker: resPrimitiva[3]
+        }
+      };
+      Primitiva.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -62,6 +76,14 @@ router.get("/euromillon", (req, res) => {
     .then(resEuromillon => {
       console.log("respondiendo sandris", resEuromillon);
       res.status(200).json(resEuromillon);
+      let obj = {
+        euromillon: {
+          numeros: resEuromillon[0],
+          estrellas: resEuromillon[1],
+          millon: resEuromillon[2]
+        }
+      };
+      Euromillon.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -72,6 +94,14 @@ router.get("/bonoloto", (req, res) => {
     .then(resBonoloto => {
       console.log("respondiendo sandris", resBonoloto);
       res.status(200).json(resBonoloto);
+      let obj = {
+        bonoloto: {
+          numeros: resBonoloto[0],
+          complementario: resBonoloto[1],
+          reintegro: resBonoloto[2]
+        }
+      };
+      Bonoloto.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -82,6 +112,10 @@ router.get("/gordo", (req, res) => {
     .then(resGordo => {
       console.log("respondiendo sandris", resGordo);
       res.status(200).json(resGordo);
+      let obj = {
+        gordo: { numeros: resGordo[0], reintegro: resGordo[1] }
+      };
+      Gordo.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -92,6 +126,14 @@ router.get("/lototurf", (req, res) => {
     .then(resLototurf => {
       console.log("respondiendo sandris", resLototurf);
       res.status(200).json(resLototurf);
+      let obj = {
+        lototurf: {
+          numeros: resLototurf[0],
+          caballo: resLototurf[1],
+          reintegro: resLototurf[2]
+        }
+      };
+      Lototurf.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -102,6 +144,14 @@ router.get("/quiniela", (req, res) => {
     .then(resQuiniela => {
       console.log("respondiendo sandris", resQuiniela);
       res.status(200).json(resQuiniela);
+      let obj = {
+        quiniela: {
+          equipos: resQuiniela[0],
+          partidos: resQuiniela[1],
+          resultados: resQuiniela[2]
+        }
+      };
+      Quiniela.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -112,6 +162,30 @@ router.get("/quinigol", (req, res) => {
     .then(resQuinigol => {
       console.log("respondiendo sandris", resQuinigol);
       res.status(200).json(resQuinigol);
+      let obj = {
+        quinigol: {
+          equipos: resQuinigol[0],
+          partidos: resQuinigol[1],
+          resultados: resQuinigol[2]
+        }
+      };
+      Quinigol.create(obj);
+    })
+    .catch(err => console.log(err, "err full list"));
+});
+
+//Quintuple
+router.get("/quintuple", (req, res) => {
+  QuintupleAPIHandler.getQuintuple()
+    .then(resQuintuple => {
+      console.log("respondiendo sandris", resQuintuple);
+      res.status(200).json(resQuintuple);
+      let obj = {
+        quintuple: {
+          numeros: resQuintuple
+        }
+      };
+      Quintuple.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -122,6 +196,10 @@ router.get("/sabado", (req, res) => {
     .then(resSabado => {
       console.log("respondiendo sandris", resSabado);
       res.status(200).json(resSabado);
+      let obj = {
+        sabado: { premios: resSabado[0], reintegros: resSabado[1] }
+      };
+      Sabado.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });
@@ -132,6 +210,12 @@ router.get("/jueves", (req, res) => {
     .then(resJueves => {
       console.log("respondiendo sandris", resJueves);
       res.status(200).json(resJueves);
+
+      let obj = {
+        jueves: { premios: resJueves[0], reintegros: resJueves[1] }
+      };
+
+      Jueves.create(obj);
     })
     .catch(err => console.log(err, "err full list"));
 });

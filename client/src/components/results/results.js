@@ -1,17 +1,60 @@
-import React from 'react'
-import { Container } from "react-bootstrap";
+import React, { Component } from "react";
+import { Container, Row } from "react-bootstrap";
 
-const Results = props => {
+import ResultService from "../../service/Results.service";
 
+import EuromillonCard from "./euromillon-card";
+import BonolotoCard from "./Bonoloto-card";
+import PrimitivaCard from "./primitiva-card";
+import GordoCard from "./gordo-card";
+import LototurfCard from "./lototurf-card";
+import QuinielaCard from "./quiniela-card";
+import QuinigolCard from "./quinigol-card";
+import QuintupleCard from "./quintuple-card";
+import JuevesCard from "./jueves-card";
+import SabadoCard from "./sabado-card";
+
+class Results extends Component {
+  constructor(props) {
+    super(props);
+    this._service = new ResultService();
+    this.state = {
+      euromillon: []
+    };
+  }
+
+  
+
+  render() {
     return (
+      <section>
         <Container>
-            <section>
-                <h1>Resultados</h1>
-            </section>
+          <h1>Resultados</h1>
         </Container>
 
-    )
+        <Container>
+          <Row>
+            <EuromillonCard />
+            {/* {this.state.euromillon.map(euromillon => (
+              <EuromillonCard  {...euromillon.euromillon} />
+            ))} */}
+            <BonolotoCard />
+            <PrimitivaCard />
+            <GordoCard />
+            <QuinielaCard />
+            <QuinigolCard />
+            <LototurfCard />
+            <QuintupleCard />
+          </Row>
+          <hr></hr>
+          <Row>
+            <JuevesCard />
+            <SabadoCard />
+          </Row>
+        </Container>
+      </section>
+    );
+  }
 }
 
-
-export default Results
+export default Results;
