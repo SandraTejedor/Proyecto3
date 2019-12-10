@@ -11,5 +11,6 @@ require("./configs/locals.config")(app);
 require("./configs/session.config")(app);
 
 app.use("/api/auth", require("./routes/auth.routes"));
+app.use("/api/results", require("./routes/results.routes"));
 
 module.exports = app;

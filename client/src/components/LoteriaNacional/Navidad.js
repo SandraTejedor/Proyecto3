@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 
-const Navidad = props => {
-
+class Navidad extends Component {
+  constructor(props) {
+    super(props);
+    // this._service = new EuroService();
+    this.state = {};
+  }
+  render() {
     return (
-        <Container>
-            <section>
-                <h1>Navidad</h1>
-            </section>
-        </Container>
-
-    )
+      <Container>
+        <section>
+          <h1>Navidad</h1>
+        </section>
+      </Container>
+    );
+  }
 }
 
 

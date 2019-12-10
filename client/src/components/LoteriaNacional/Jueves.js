@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 
-const Jueves = props => {
-
+class Jueves extends Component {
+  constructor(props) {
+    super(props);
+    // this._service = new EuroService();
+    this.state = {};
+  }
+  render() {
     return (
-        <Container>
-            <section>
-                <h1>Jueves</h1>
-            </section>
-        </Container>
-
-    )
+      <Container>
+        <section>
+          <h1>Jueves</h1>
+        </section>
+      </Container>
+    );
+  }
 }
+
 
 
 export default Jueves
