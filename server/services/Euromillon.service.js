@@ -2,18 +2,18 @@ const axios = require("axios");
 
 const $ = require("cheerio");
 const url = "https://www.loteriasyapuestas.es/es/resultados";
-let arrNumeros = [];
-let arrEstrellas = [];
-let arrEuromillon = [];
-let b = "";
-let cadaEs = "";
 
 class EuromillonAPIHandler {
   getEuromillon() {
     return axios
-      .get(url)
-      .then(res => {
-        //los numeros
+    .get(url)
+    .then(res => {
+      let arrNumeros = [];
+      let arrEstrellas = [];
+      let arrEuromillon = [];
+      let b = "";
+      let cadaEs = "";
+      //los numeros
         const results = $(
           ".c-ultimo-resultado__combinacion-li--euromillones",
           res.data

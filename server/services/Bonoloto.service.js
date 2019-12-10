@@ -1,15 +1,15 @@
 const axios = require("axios");
 const $ = require("cheerio");
 const url = "https://www.loteriasyapuestas.es/es/resultados";
-let arrNumeros = [];
-let arrBonoloto = [];
-let b = "";
 
 class BonolotoAPIHandler {
   getBonoloto() {
     return axios
       .get(url)
       .then(res => {
+        let arrNumeros = [];
+        let arrBonoloto = [];
+        let b = "";
         //los numeros
         const numeros = $(
           ".c-ultimo-resultado__combinacion-li--bonoloto",
@@ -39,7 +39,7 @@ class BonolotoAPIHandler {
         arrBonoloto.push(reintegro.text());
 
         console.log(arrBonoloto);
-        return arrBonoloto
+        return arrBonoloto;
       })
       .catch(function(err) {
         //handle error
@@ -48,4 +48,3 @@ class BonolotoAPIHandler {
 }
 
 module.exports = BonolotoAPIHandler;
-

@@ -1,15 +1,15 @@
 const axios = require("axios");
 const $ = require("cheerio");
 const url = "https://www.loteriasyapuestas.es/es/resultados";
-let arrNumeros = [];
-let arrGordo = [];
-let b = "";
 
 class GordoAPIHandler {
   getGordo() {
     return axios
-      .get(url)
-      .then(res => {
+    .get(url)
+    .then(res => {
+      let arrNumeros = [];
+      let arrGordo = [];
+      let b = "";
         //los numeros
         const numeros = $(
           ".c-ultimo-resultado__combinacion-li--elgordo",

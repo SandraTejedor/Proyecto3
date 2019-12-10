@@ -1,15 +1,15 @@
 const axios = require("axios");
 const $ = require("cheerio");
 const url = "https://www.loteriasyapuestas.es/es/resultados";
-let arrNumeros = [];
-let arrPrimitiva = [];
-let b = "";
 
 class PrimitivaAPIHandler {
   getPrimitiva() {
     return axios
       .get(url)
       .then(res => {
+        let arrNumeros = [];
+        let arrPrimitiva = [];
+        let b = "";
         //los numeros
         const numeros = $(
           ".c-ultimo-resultado__combinacion-li--primitiva",
@@ -43,7 +43,7 @@ class PrimitivaAPIHandler {
         arrPrimitiva.push(joker.text());
 
         console.log(arrPrimitiva);
-        return arrPrimitiva
+        return arrPrimitiva;
       })
       .catch(function(err) {
         //handle error
