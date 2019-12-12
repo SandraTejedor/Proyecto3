@@ -10,6 +10,7 @@ class JuevesAPIHandler {
         let arrNumeros = [];
         let arrReintegros = [];
         let arrJueves = [];
+        const fecha = $(`#qa_resultadoSorteo-fecha-LNACJ`, res.data);
         //numeros
         const numeros = $(
           ".c-resultado-sorteo__numero > .c-resultado-sorteo__numero-enlace",
@@ -44,6 +45,7 @@ class JuevesAPIHandler {
 
         arrJueves.push(arrNumeros);
         arrJueves.push(arrReintegros);
+        arrJueves.push(fecha.text());
 
         console.log(arrJueves);
         return arrJueves;

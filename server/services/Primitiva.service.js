@@ -27,8 +27,11 @@ class PrimitivaAPIHandler {
           res.data
         );
 
+
         //joker
         const joker = $(".c-ultimo-resultado__joker-ganador", res.data);
+
+        const fecha = $("#qa_ultResult-LAPR-fecha", res.data);
 
         let a = numeros.text();
         for (let i = 0; i < 12; i = i + 2) {
@@ -41,6 +44,7 @@ class PrimitivaAPIHandler {
         arrPrimitiva.push(complementario.text());
         arrPrimitiva.push(reintegro.text());
         arrPrimitiva.push(joker.text());
+        arrPrimitiva.push(fecha.text());
 
         console.log(arrPrimitiva);
         return arrPrimitiva;

@@ -30,7 +30,7 @@ class GordoCard extends Component {
   render() {
     return this.state.gordo ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Gordo del día</h4>
+        <h4>Gordo del día {this.state.gordo[2]}</h4>
         {this.state.gordo[0].map(gordo => (
           <span className="numerosGordo"> {gordo} </span>
         ))}

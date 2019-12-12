@@ -4,7 +4,8 @@ const Schema   = mongoose.Schema;
 const QuintupleSchema = new Schema(
   {
     quintuple: {
-      numeros: []
+      numeros: [],
+      fecha: String
     }
   },
   {

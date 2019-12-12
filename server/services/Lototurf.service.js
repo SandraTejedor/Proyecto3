@@ -27,22 +27,28 @@ class LototurfAPIHandler {
           ".c-ultimo-resultado__reintegro-li--lototurf",
           res.data
         );
+          const fecha = $("#qa_ultResult-LOTU-fecha", res.data);
+          let fe = fecha.text();
+          console.log("la long", fe.length);
+          let d = fe.slice(7, 31);
+          console.log(d);
 
-        let a = numeros.text();
-        for (let i = 0; i < 12; i = i + 2) {
-          console.log(a);
-          b = a.slice(0, 2);
-          a = a.substr(2);
-          arrNumeros.push(b);
-        }
+          let a = numeros.text();
+          for (let i = 0; i < 12; i = i + 2) {
+            console.log(a);
+            b = a.slice(0, 2);
+            a = a.substr(2);
+            arrNumeros.push(b);
+          }
 
-        let cab = caballo.text();
-        console.log("la long", cab.length);
-        c = cab.slice(7, 9);
+          let cab = caballo.text();
+          console.log("la long", cab.length);
+          c = cab.slice(7, 9);
 
-        arrLototurf.push(arrNumeros);
-        arrLototurf.push(c);
-        arrLototurf.push(reintegro.text());
+          arrLototurf.push(arrNumeros);
+          arrLototurf.push(c);
+          arrLototurf.push(reintegro.text());
+          arrLototurf.push(d);
 
         console.log(arrLototurf);
         return arrLototurf

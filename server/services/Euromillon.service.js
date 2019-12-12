@@ -6,14 +6,14 @@ const url = "https://www.loteriasyapuestas.es/es/resultados";
 class EuromillonAPIHandler {
   getEuromillon() {
     return axios
-    .get(url)
-    .then(res => {
-      let arrNumeros = [];
-      let arrEstrellas = [];
-      let arrEuromillon = [];
-      let b = "";
-      let cadaEs = "";
-      //los numeros
+      .get(url)
+      .then(res => {
+        let arrNumeros = [];
+        let arrEstrellas = [];
+        let arrEuromillon = [];
+        let b = "";
+        let cadaEs = "";
+        //los numeros
         const results = $(
           ".c-ultimo-resultado__combinacion-li--euromillones",
           res.data
@@ -24,6 +24,7 @@ class EuromillonAPIHandler {
 
         //el millon (juego)
         const millon = $(".c-ultimo-resultado__desplegable-titulo", res.data);
+        const fecha = $("#qa_ultResult-EMIL-fecha", res.data);
 
         //para los numero
         let a = results.text();
@@ -45,6 +46,7 @@ class EuromillonAPIHandler {
         arrEuromillon.push(arrNumeros);
         arrEuromillon.push(arrEstrellas);
         arrEuromillon.push(millon.text());
+        arrEuromillon.push(fecha.text());
 
         //para las estrellas
         console.log(arrNumeros, arrEstrellas, arrEuromillon, millon.text());

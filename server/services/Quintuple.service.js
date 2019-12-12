@@ -23,9 +23,18 @@ class QuintupleAPIHandler {
           a = a.substr(2);
           arrNumeros.push(b);
         }
+        const fecha = $("#qa_ultResult-QUPL-fecha", res.data);
+        let fe = fecha.text();
+        console.log("la long", fe.length);
+        let c = fe.slice(6, 31);
+        console.log(c);
+        let arrQuintuple = [];
+        arrQuintuple.push(arrNumeros);
+        arrQuintuple.push(c);
 
         console.log(arrNumeros);
-        return arrNumeros
+        console.log(arrQuintuple);
+        return arrQuintuple;
       })
       .catch(function(err) {
         //handle error

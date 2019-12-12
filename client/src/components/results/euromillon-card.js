@@ -30,7 +30,7 @@ class EuromillonCard extends Component {
   render() {
     return this.state.euromillon ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Euromillón del día</h4>
+        <h4>Euromillón del día {this.state.euromillon[3]}</h4>
         {this.state.euromillon[0].map(euro => (
           <span className="numerosEuro"> {euro} </span>
         ))}

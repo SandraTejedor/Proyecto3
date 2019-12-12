@@ -31,7 +31,7 @@ class LototurfCard extends Component {
   render() {
     return this.state.lototurf ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Lototurf del día</h4>
+        <h4>Lototurf {this.state.lototurf[3]}</h4>
         {this.state.lototurf[0].map(lototurf => (
           <span className="numerosLototurf"> {lototurf} </span>
         ))}

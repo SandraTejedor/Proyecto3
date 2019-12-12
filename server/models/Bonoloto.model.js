@@ -5,7 +5,8 @@ const BonolotoSchema = new Schema({
   bonoloto:{
     numeros:[],
     complementario: String,
-    reintegro: String
+    reintegro: String,
+    fecha:String
   }
 }, {
   timestamps: {

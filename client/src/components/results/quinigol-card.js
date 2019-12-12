@@ -9,6 +9,7 @@ class QuinigolCard extends Component {
     super(props);
     this._service = new ResultService();
     this.state = {
+     timestamps: null, 
       quinigol: null,
       showModalWindow: false
     };
@@ -22,7 +23,9 @@ class QuinigolCard extends Component {
   updateQuinigolList = () => {
     this._service
       .quinigol()
-      .then(quinigol => this.setState({ quinigol: quinigol.data }))
+      .then(quinigol =>
+        this.setState({ quinigol: quinigol.data})
+      )
       .catch(err => console.log("Error", err));
   };
 
@@ -30,12 +33,17 @@ class QuinigolCard extends Component {
   render() {
     return this.state.quinigol ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Quinigol del día</h4>
+        <h4>
+          Quinigol {this.state.quinigol[3]}
+          {/* {this.state.timestamps.created_at} */}
+        </h4>
         <div className="elQuinigol">
           <div className="partidos">
-            {this.state.quinigol[0].map(quinigol => (
-              <p className="partidosQuinigol"> {quinigol} </p>
-            ))}
+            <ol>
+              {this.state.quinigol[0].map(quinigol => (
+                <li className="partidosQuinigol"> {quinigol} </li>
+              ))}
+            </ol>
           </div>
           <div className="resultados">
             {this.state.quinigol[1].map(quinigol => (

@@ -21,6 +21,8 @@ class GordoAPIHandler {
           ".c-ultimo-resultado__reintegro-li--elgordo",
           res.data
         );
+        
+        const fecha = $("#qa_ultResult-ELGR-fecha", res.data);
 
         let a = numeros.text();
         for (let i = 0; i < 10; i = i + 2) {
@@ -31,6 +33,7 @@ class GordoAPIHandler {
         }
         arrGordo.push(arrNumeros);
         arrGordo.push(reintegro.text());
+        arrGordo.push(fecha.text());
 
         console.log(arrGordo);
         return arrGordo;

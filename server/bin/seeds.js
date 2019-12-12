@@ -5,27 +5,31 @@
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const User = require("../models/User.model");
 
 const bcryptSalt = 10;
 
 mongoose
-  .connect('mongodb://localhost/server', {useNewUrlParser: true})
+  .connect("mongodb://localhost/proyecto3", { useNewUrlParser: true })
   .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
   })
   .catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.error("Error connecting to mongo", err);
   });
 
 let users = [
   {
-    username: "alice",
-    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+    username: "sandra",
+    password: bcrypt.hashSync("sandra", bcrypt.genSaltSync(bcryptSalt)),
+    perfil: "admin"
   },
   {
-    username: "bob",
-    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+    username: "pedro",
+    password: bcrypt.hashSync("pedro", bcrypt.genSaltSync(bcryptSalt)),
+    perfil: "vendedor"
   }
 ]
 

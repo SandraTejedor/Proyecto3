@@ -22,7 +22,9 @@ class QuintupleCard extends Component {
   updateQuintupleList = () => {
     this._service
       .quintuple()
-      .then(quintuple => this.setState({ quintuple: quintuple.data }))
+      .then(quintuple => {
+        this.setState({ quintuple: quintuple.data });
+      })
       .catch(err => console.log("Error", err));
   };
 
@@ -30,10 +32,12 @@ class QuintupleCard extends Component {
   render() {
     return this.state.quintuple ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Quintuple Plus del día</h4>
+        <h4>Quintuple Plus del día {this.state.quintuple[1]}</h4>
 
-        {this.state.quintuple.map(quintuple => (
-          <p className="resultadosQuintuple"> {quintuple} </p>
+        {this.state.quintuple[0].map((quintuple, index) => (
+          <p key={index} className="resultadosQuintuple">
+            Carrera {index + 1}: {quintuple}
+          </p>
         ))}
       </Col>
     ) : (

@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
-const GordoSchema = new Schema({
-  gordo:{
-    numeros:[],
-    reintegro: String
+const GordoSchema = new Schema(
+  {
+    gordo: {
+      numeros: [],
+      reintegro: String,
+      fecha: String
+    }
+  },
+  {
+    timestamps: {
+      createdAt: "created_at",
+      updatedAt: "updated_at"
+    }
   }
-}, {
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-  }
-});
+);
 
 const Gordo = mongoose.model("Gordo", GordoSchema);
 module.exports = Gordo;

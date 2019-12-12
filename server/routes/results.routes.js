@@ -62,7 +62,8 @@ router.get("/primitiva", (req, res) => {
           numeros: resPrimitiva[0],
           complementario: resPrimitiva[1],
           reintegro: resPrimitiva[2],
-          joker: resPrimitiva[3]
+          joker: resPrimitiva[3],
+          fecha: resPrimitiva[4]
         }
       };
       Primitiva.create(obj);
@@ -80,7 +81,8 @@ router.get("/euromillon", (req, res) => {
         euromillon: {
           numeros: resEuromillon[0],
           estrellas: resEuromillon[1],
-          millon: resEuromillon[2]
+          millon: resEuromillon[2],
+          fecha: resEuromillon[3]
         }
       };
       Euromillon.create(obj);
@@ -98,7 +100,8 @@ router.get("/bonoloto", (req, res) => {
         bonoloto: {
           numeros: resBonoloto[0],
           complementario: resBonoloto[1],
-          reintegro: resBonoloto[2]
+          reintegro: resBonoloto[2],
+          fecha: resBonoloto[3]
         }
       };
       Bonoloto.create(obj);
@@ -113,7 +116,11 @@ router.get("/gordo", (req, res) => {
       console.log("respondiendo sandris", resGordo);
       res.status(200).json(resGordo);
       let obj = {
-        gordo: { numeros: resGordo[0], reintegro: resGordo[1] }
+        gordo: {
+          numeros: resGordo[0],
+          reintegro: resGordo[1],
+          fecha: resGordo[2]
+        }
       };
       Gordo.create(obj);
     })
@@ -130,7 +137,8 @@ router.get("/lototurf", (req, res) => {
         lototurf: {
           numeros: resLototurf[0],
           caballo: resLototurf[1],
-          reintegro: resLototurf[2]
+          reintegro: resLototurf[2],
+          fecha: resLototurf[3]
         }
       };
       Lototurf.create(obj);
@@ -148,7 +156,8 @@ router.get("/quiniela", (req, res) => {
         quiniela: {
           equipos: resQuiniela[0],
           partidos: resQuiniela[1],
-          resultados: resQuiniela[2]
+          resultados: resQuiniela[2],
+          fecha: resQuiniela[3]
         }
       };
       Quiniela.create(obj);
@@ -166,7 +175,8 @@ router.get("/quinigol", (req, res) => {
         quinigol: {
           equipos: resQuinigol[0],
           partidos: resQuinigol[1],
-          resultados: resQuinigol[2]
+          resultados: resQuinigol[2],
+          fecha: resQuinigol[3]
         }
       };
       Quinigol.create(obj);
@@ -182,7 +192,8 @@ router.get("/quintuple", (req, res) => {
       res.status(200).json(resQuintuple);
       let obj = {
         quintuple: {
-          numeros: resQuintuple
+          numeros: resQuintuple[0],
+          fecha: resQuintuple[1]
         }
       };
       Quintuple.create(obj);
@@ -197,7 +208,11 @@ router.get("/sabado", (req, res) => {
       console.log("respondiendo sandris", resSabado);
       res.status(200).json(resSabado);
       let obj = {
-        sabado: { premios: resSabado[0], reintegros: resSabado[1] }
+        sabado: {
+          premios: resSabado[0],
+          reintegros: resSabado[1],
+          fecha: resSabado[2]
+        }
       };
       Sabado.create(obj);
     })
@@ -212,7 +227,11 @@ router.get("/jueves", (req, res) => {
       res.status(200).json(resJueves);
 
       let obj = {
-        jueves: { premios: resJueves[0], reintegros: resJueves[1] }
+        jueves: {
+          premios: resJueves[0],
+          reintegros: resJueves[1],
+          fecha: resJueves[2]
+        }
       };
 
       Jueves.create(obj);

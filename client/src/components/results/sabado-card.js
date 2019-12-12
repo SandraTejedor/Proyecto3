@@ -31,7 +31,7 @@ class SabadoCard extends Component {
   render() {
     return this.state.sabado ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del Sábado del día</h4>
+        <h4>Sorteo del Sábado del día  {this.state.sabado[2]}</h4>
         {this.state.sabado[0].map(sabado => (
           <span className="numerosJueves"> {sabado} </span>
         ))}

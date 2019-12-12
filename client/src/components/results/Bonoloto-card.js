@@ -30,7 +30,7 @@ class BonolotoCard extends Component {
   render() {
     return this.state.bonoloto ? (
       <Col className="coaster-card" md={6}>
-        <h4>Resultado del BonoLoto del día</h4>
+        <h4>BonoLoto del día {this.state.bonoloto[3]}</h4>
         {this.state.bonoloto[0].map(bonoloto => (
           <span className="numerosBonoloto"> {bonoloto} </span>
         ))}

@@ -5,7 +5,8 @@ const NavidadSchema = new Schema(
   {
     navidad: {
       premios: [],
-      reintegros: []
+      reintegros: [],
+      fecha: String
     }
   },
   {

@@ -5,7 +5,8 @@ const NiñoSchema = new Schema(
   {
     niño: {
       premios: [],
-      reintegros: []
+      reintegros: [],
+      fecha: String
     }
   },
   {

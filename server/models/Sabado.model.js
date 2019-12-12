@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const SabadoSchema = new Schema(
   {
     sabado: {
       premios: [],
-      reintegros: []
+      reintegros: [],
+      fecha: String
     }
   },
   {

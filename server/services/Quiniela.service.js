@@ -46,10 +46,15 @@ class QuinielaAPIHandler {
           }
         }
         //console.log(bb);
-
+        const fecha = $(`#qa_ultResult-LAQU-fecha `, res.data);
+        let fe = fecha.text();
+        console.log("la long", fe.length);
+        let c = fe.slice(6, 31);
+        console.log(c);
         arrQuiniela.push(cc);
         arrQuiniela.push(b);
         arrQuiniela.push(bb);
+        arrQuiniela.push(c);
 
         //console.log(arrQuiniela);
         return arrQuiniela;

@@ -6,7 +6,8 @@ const LototurfSchema = new Schema(
     lototurf: {
       numeros: [],
       caballo: String,
-      reintegro: String
+      reintegro: String,
+      fecha: String
     }
   },
   {

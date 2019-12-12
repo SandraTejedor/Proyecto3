@@ -19,11 +19,11 @@ class Results extends Component {
     super(props);
     this._service = new ResultService();
     this.state = {
-      euromillon: []
+     
     };
   }
 
-  
+
 
   render() {
     return (
@@ -35,16 +35,13 @@ class Results extends Component {
         <Container>
           <Row>
             <EuromillonCard />
-            {/* {this.state.euromillon.map(euromillon => (
-              <EuromillonCard  {...euromillon.euromillon} />
-            ))} */}
             <BonolotoCard />
             <PrimitivaCard />
             <GordoCard />
-            <QuinielaCard />
-            <QuinigolCard />
             <LototurfCard />
             <QuintupleCard />
+            <QuinielaCard />
+            <QuinigolCard />
           </Row>
           <hr></hr>
           <Row>

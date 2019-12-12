@@ -7,7 +7,8 @@ const PrimitivaSchema = new Schema(
       numeros: [],
       complementario: String,
       reintegro: String,
-      joker: String
+      joker: String,
+      fecha: String
     }
   },
   {

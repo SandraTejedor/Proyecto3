@@ -26,6 +26,7 @@ class BonolotoAPIHandler {
           ".c-ultimo-resultado__reintegro-li--bonoloto",
           res.data
         );
+         const fecha = $("#qa_ultResult-BONO-fecha", res.data);
 
         let a = numeros.text();
         for (let i = 0; i < 12; i = i + 2) {
@@ -37,6 +38,7 @@ class BonolotoAPIHandler {
         arrBonoloto.push(arrNumeros);
         arrBonoloto.push(complementario.text());
         arrBonoloto.push(reintegro.text());
+        arrBonoloto.push(fecha.text());
 
         console.log(arrBonoloto);
         return arrBonoloto;

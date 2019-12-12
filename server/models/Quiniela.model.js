@@ -6,7 +6,8 @@ const QuinielaSchema = new Schema(
     quiniela: {
       equipos: [],
       partidos: [],
-      resultados: []
+      resultados: [],
+      fecha: String
     }
   },
   {

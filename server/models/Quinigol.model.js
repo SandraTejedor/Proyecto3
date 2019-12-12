@@ -6,7 +6,8 @@ const QuinigolSchema = new Schema(
     quinigol: {
       equipos: [],
       partidos: [],
-      resultados: []
+      resultados: [],
+      fecha: String
     }
   },
   {

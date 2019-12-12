@@ -41,12 +41,14 @@ class SabadoAPIHandler {
           //console.log(nu)
         }
         //console.log(arrReintegros)
+        const fecha = $(`#qa_resultadoSorteo-fecha-LNACS`, res.data);
 
         arrSabado.push(arrNumeros);
         arrSabado.push(arrReintegros);
+        arrSabado.push(fecha.text());
 
         console.log(arrSabado);
-        return arrSabado
+        return arrSabado;
       })
       .catch(function(err) {
         //handle error

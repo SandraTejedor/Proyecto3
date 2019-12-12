@@ -47,9 +47,16 @@ class QuinigolAPIHandler {
         }
         console.log(bb);
 
+        const fecha = $(`#qa_ultResult-QGOL-fecha`, res.data);
+        let fe = fecha.text();
+        console.log("la long", fe.length);
+        let c = fe.slice(6, 31);
+        console.log(c);
+
         arrQuinigol.push(cc);
         arrQuinigol.push(b);
         arrQuinigol.push(bb);
+        arrQuinigol.push(c);
 
         console.log(arrQuinigol);
         return arrQuinigol
