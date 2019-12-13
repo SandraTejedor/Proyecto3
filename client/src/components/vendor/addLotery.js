@@ -12,7 +12,7 @@ class AddLottery extends Component {
     this.state = {
       otro: "",
       nacional: {
-        numero: 0,
+        numero: "",
         sorteo: "",
         serieInicio: 0,
         serieFinal: 0,
@@ -25,6 +25,18 @@ class AddLottery extends Component {
     e.preventDefault();
     this._nationalService.postNacional(this.state.nacional);
   };
+
+  // handleNumberChange = e => {
+  //   let a = 0;
+  //   if (e.target.value == "") {
+  //     a = 0;
+  //   } else {
+  //     a = parseInt(e.target.value, 10);
+  //   }
+  //   this.setState({
+  //     nacional: { ...this.state.nacional, numero: a }
+  //   });
+  // };
 
   handleInputChange = e => {
     let { name, value } = e.target;
@@ -43,10 +55,11 @@ class AddLottery extends Component {
           <Form.Group>
             <Form.Label>Número del décimo</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               name="numero"
               onChange={this.handleInputChange}
               value={this.state.nacional.numero}
+              maxLength="5"
             />
           </Form.Group>
           <Form.Group>

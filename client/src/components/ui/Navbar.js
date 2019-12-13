@@ -35,10 +35,10 @@ class Navigation extends Component {
               <Link to="/">Inicio</Link>
             </Nav.Link> */}
                 <Nav.Link as="li">
-                  <Link to="/results">Resultados</Link>
+                  <Link to="/nacional/new">Añadir lotería</Link>
                 </Nav.Link>
                 <Nav.Link as="li">
-                  <Link to="/nacional/new">Añadir lotería</Link>
+                  <Link to="/nacional/list">Lista de lotería disponible</Link>
                 </Nav.Link>
               </Nav>
               <Nav className="ml-auto">
@@ -55,7 +55,7 @@ class Navigation extends Component {
         );
       } 
     if (this.props.loggedInUser){
-      return  (
+      return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
             <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
@@ -102,10 +102,13 @@ class Navigation extends Component {
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link as="li">
-                <Link to="/contact">Contacto</Link>
+                <Link to="/nacional/buy">Compra online</Link>
               </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
+              <Nav.Link as="li">
+                <Link to="/contact">Contacto</Link>
+              </Nav.Link>
               <Nav.Link as="li">
                 <Link to="/profile">Mi perfil</Link>
               </Nav.Link>
@@ -116,7 +119,7 @@ class Navigation extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      )} 
+      );} 
       if(!this.props.loggedInUser){return (
 
         <Navbar bg="dark" variant="dark" expand="md">
@@ -164,11 +167,11 @@ class Navigation extends Component {
                   <Link to="/loteriaNacional/elNiño">El Niño</Link>
                 </NavDropdown.Item>
               </NavDropdown>
+            </Nav>
+            <Nav className="ml-auto">
               <Nav.Link as="li">
                 <Link to="/contact">Contacto</Link>
               </Nav.Link>
-            </Nav>
-            <Nav className="ml-auto">
               <Nav.Link as="li">
                 <Link to="/signup">Registro</Link>
               </Nav.Link>

@@ -12,4 +12,7 @@ export default class Services {
   //   getOneCoaster = id => this._service.get(`/${id}`);
   postNacional = nacional => this._service.post("/new", nacional);
   postNacionalBuy = nacionalBuy => this._service.post("/buy", nacionalBuy);
+  nacionalList = nacionalList => this._service.get("/list", nacionalList);
+  delete = nacionalList => this._service.get(`/delete/${nacionalList}`);
+  
 }

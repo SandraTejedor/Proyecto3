@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const LoteriaNacionalSchema = new Schema(
   {
     
-      numero: Number,
+      numero: String,
       serie: Number,
       fraccion: Number,
       sorteo: String,

@@ -36,6 +36,7 @@ import Primitiva from './components/Juegos/Primitiva'
 
 import Nacional from "./components/vendor/addLotery";
 import NacionalBuy from "./components/LoteriaNacional/buyLottery";
+import NacionalList from "./components/LoteriaNacional/list"
 
 
 
@@ -150,6 +151,12 @@ class App extends Component {
             path="/nacional/buy"
             render={match => (
               <NacionalBuy setUser={this.setTheUser} {...match} />
+            )}
+          />
+          <Route
+            path="/nacional/list"
+            render={match => (
+              <NacionalList setUser={this.setTheUser} {...match} />
             )}
           />
         </Switch>

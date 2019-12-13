@@ -12,17 +12,17 @@ class BuyLottery extends Component {
     this.state = {
       otro: "",
       nacional: {
-          cero:0,
-          uno:0,
-          dos:0,
-          tres:0,
-          cuatro:0,
-          cinco:0,
-          seis:0,
-          siete:0,
-          ocho:0,
-          nueve:0,
-        
+        0: 0,
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0,
+        7: 0,
+        8: 0,
+        9: 0,
+
         fechaSorteo: ""
       }
     };
@@ -34,6 +34,7 @@ class BuyLottery extends Component {
   };
 
   handleInputChange = e => {
+    console.log("changin inou");
     let { name, value } = e.target;
     this.setState({
       nacional: { ...this.state.nacional, [name]: value }
@@ -65,91 +66,95 @@ class BuyLottery extends Component {
             <Form.Label>Nºs acabados en 0</Form.Label>
             <Form.Control
               type="number"
-              name="sorteo"
+              name="0"
               onChange={this.handleInputChange}
-              value={this.state.nacional.cero}
+              value={this.state.nacional["0"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 1</Form.Label>
             <Form.Control
               type="number"
-              name="serieInicio"
+              name="1"
               onChange={this.handleInputChange}
-              value={this.state.nacional.uno}
+              value={this.state.nacional["1"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 2</Form.Label>
             <Form.Control
               type="number"
-              name="sorteo"
+              name="2"
               onChange={this.handleInputChange}
-              value={this.state.nacional.dos}
+              value={this.state.nacional["2"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 3</Form.Label>
             <Form.Control
               type="number"
-              name="serieInicio"
+              name="3"
               onChange={this.handleInputChange}
-              value={this.state.nacional.tres}
+              value={this.state.nacional["3"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 4</Form.Label>
             <Form.Control
               type="number"
-              name="sorteo"
+              name="4"
               onChange={this.handleInputChange}
-              value={this.state.nacional.cuatro}
+              value={this.state.nacional["4"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 5</Form.Label>
             <Form.Control
               type="number"
-              name="serieInicio"
+              name="5"
               onChange={this.handleInputChange}
-              value={this.state.nacional.cinco}
+              value={this.state.nacional["5"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 6</Form.Label>
             <Form.Control
               type="number"
-              name="sorteo"
+              name="6"
               onChange={this.handleInputChange}
-              value={this.state.nacional.seis}
+              value={this.state.nacional["6"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 7</Form.Label>
             <Form.Control
               type="number"
-              name="serieInicio"
+              name="7"
               onChange={this.handleInputChange}
-              value={this.state.nacional.siete}
+              value={this.state.nacional["7"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 8</Form.Label>
             <Form.Control
               type="number"
-              name="sorteo"
+              name="8"
               onChange={this.handleInputChange}
-              value={this.state.nacional.ocho}
+              value={this.state.nacional["8"]}
             />
           </Form.Group>
           <Form.Group>
             <Form.Label>Nºs acabados en 9</Form.Label>
             <Form.Control
               type="number"
-              name="serieInicio"
+              name="9"
               onChange={this.handleInputChange}
-              value={this.state.nacional.nueve}
+              value={this.state.nacional["9"]}
             />
+          </Form.Group>
+          <Form.Group>
+            Si quieres un número o una terminación en particular ponte en
+            <Link to="/contact"> contacto </Link> con nosotros
           </Form.Group>
 
           <div className="botones">
