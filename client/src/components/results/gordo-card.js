@@ -29,10 +29,13 @@ class GordoCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.gordo ? (
-      <Col className="coaster-card" md={6}>
+      <Col className="coaster-card" md={5}>
         <h4>Gordo del día {this.state.gordo[2]}</h4>
-        {this.state.gordo[0].map(gordo => (
-          <span className="numerosGordo"> {gordo} </span>
+        {this.state.gordo[0].map((gordo , index)=> (
+          <span key={index}  className="numerosGordo">
+            {" "}
+            {gordo}{" "}
+          </span>
         ))}
         <span className="reintegroGordo">{this.state.gordo[1]}</span>
       </Col>

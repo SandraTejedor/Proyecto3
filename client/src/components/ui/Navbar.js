@@ -20,41 +20,47 @@ class Navigation extends Component {
     const saludo = this.props.loggedInUser
       ? this.props.loggedInUser.username
       : ""; //"invitado"
-      console.log("soy el login", this.props.loggedInUser);
-      //let a = this.props.loggedInUser;
-      if (this.props.loggedInUser && this.props.loggedInUser.perfil=="vendedor") {
-        return (
-          <Navbar bg="dark" variant="dark" expand="md">
-            <Navbar bg="dark">
-              <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
-            </Navbar>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse>
-              <Nav className="mr-auto">
-                {/* <Nav.Link as="li">
+    console.log("soy el login", this.props.loggedInUser);
+    //let a = this.props.loggedInUser;
+    if (
+      this.props.loggedInUser &&
+      this.props.loggedInUser.perfil === "vendedor"
+    ) {
+      return (
+        <Navbar bg="dark" variant="dark" expand="md">
+          <Navbar bg="dark">
+            <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
+          </Navbar>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse>
+            <Nav className="mr-auto">
+              {/* <Nav.Link as="li">
               <Link to="/">Inicio</Link>
             </Nav.Link> */}
-                <Nav.Link as="li">
-                  <Link to="/nacional/new">Añadir lotería</Link>
-                </Nav.Link>
-                <Nav.Link as="li">
-                  <Link to="/nacional/list">Lista de lotería disponible</Link>
-                </Nav.Link>
-              </Nav>
-              <Nav className="ml-auto">
-                <Nav.Link as="li">
-                  <Link to="/profile">Mi perfil</Link>
-                </Nav.Link>
-                <Nav.Link as="li" onClick={this.logoutUser}>
-                  Logout |
-                </Nav.Link>
-                <Navbar.Text>Bienvenid@ {saludo}</Navbar.Text>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        );
-      } 
-    if (this.props.loggedInUser){
+              <Nav.Link as="li">
+                <Link to="/nacional/new">Añadir lotería</Link>
+              </Nav.Link>
+              <Nav.Link as="li">
+                <Link to="/nacional/list">Lista de lotería disponible</Link>
+              </Nav.Link>
+              <Nav.Link as="li">
+                <Link to="/nacional/order">Lista de pedidos</Link>
+              </Nav.Link>
+            </Nav>
+            <Nav className="ml-auto">
+              <Nav.Link as="li">
+                <Link to="/profile">Mi perfil</Link>
+              </Nav.Link>
+              <Nav.Link as="li" onClick={this.logoutUser}>
+                Logout |
+              </Nav.Link>
+              <Navbar.Text>Bienvenid@ {saludo}</Navbar.Text>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      );
+    }
+    if (this.props.loggedInUser) {
       return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
@@ -104,6 +110,9 @@ class Navigation extends Component {
               <Nav.Link as="li">
                 <Link to="/nacional/buy">Compra online</Link>
               </Nav.Link>
+              <Nav.Link as="li">
+                <Link to="/nacional/myorder">Mis pedidos</Link>
+              </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
               <Nav.Link as="li">
@@ -119,9 +128,10 @@ class Navigation extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      );} 
-      if(!this.props.loggedInUser){return (
-
+      );
+    }
+    if (!this.props.loggedInUser) {
+      return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
             <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
@@ -182,7 +192,8 @@ class Navigation extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      )};
+      );
+    }
   }
 }
 

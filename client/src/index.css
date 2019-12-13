@@ -35,3 +35,18 @@ section {
   
   margin: 0 auto;
 }
+
+li{
+  margin-bottom: 16px;
+}
+ol{
+  margin-right: 15px;
+}
+.resultados{
+  margin-right: 10px;
+}
+.coaster-card{
+  border: 0.5px solid black;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}

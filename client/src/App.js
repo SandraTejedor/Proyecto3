@@ -1,74 +1,74 @@
-import React, { Component } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import Service from './service/Auth.service'
-
+import Service from "./service/Auth.service";
 
 /* CUSTOM UI COMPONENTS */
-import Navbar from './components/ui/Navbar'
+import Navbar from "./components/ui/Navbar";
 
 /* CUSTOM PAGE COMPONENTS */
-import Index from './components/pages/Index'
-import Profile from './components/pages/Profile'
+import Index from "./components/pages/Index";
+import Profile from "./components/pages/Profile";
 
 /* CUSTOM AUTH COMPONENTS */
-import Signup from './components/auth/Signup'
-import Login from './components/auth/Login'
+import Signup from "./components/auth/Signup";
+import Login from "./components/auth/Login";
 
 /* CUSTOM RESULTS COMPONENTS */
-import Results from './components/results/results'
+import Results from "./components/results/results";
 
 /* CUSTOM CONTACT COMPONENTS */
-import Contact from './components/contact/contact'
+import Contact from "./components/contact/contact";
 
 /* CUSTOM LOTERIA NACIONAL COMPONENTS */
-import ElNiño from './components/LoteriaNacional/ElNiño'
-import Jueves from './components/LoteriaNacional/Jueves'
-import Navidad from './components/LoteriaNacional/Navidad'
-import Sabado from './components/LoteriaNacional/Sabado'
+import ElNiño from "./components/LoteriaNacional/ElNiño";
+import Jueves from "./components/LoteriaNacional/Jueves";
+import Navidad from "./components/LoteriaNacional/Navidad";
+import Sabado from "./components/LoteriaNacional/Sabado";
 
 /* CUSTOM JUEGOS COMPONENTS */
-import BonoLoto from './components/Juegos/BonoLoto'
-import ElGordo from './components/Juegos/ElGordo'
-import Euromillon from './components/Juegos/Euromillon'
-import Primitiva from './components/Juegos/Primitiva'
-
+import BonoLoto from "./components/Juegos/BonoLoto";
+import ElGordo from "./components/Juegos/ElGordo";
+import Euromillon from "./components/Juegos/Euromillon";
+import Primitiva from "./components/Juegos/Primitiva";
 
 import Nacional from "./components/vendor/addLotery";
 import NacionalBuy from "./components/LoteriaNacional/buyLottery";
-import NacionalList from "./components/LoteriaNacional/list"
-
-
-
+import NacionalList from "./components/LoteriaNacional/list";
+import OrderList from "./components/vendor/orders";
+import MyOrderList from "./components/auth/myOrders"
 
 class App extends Component {
-
   constructor() {
-    super()
-    this.state = { loggedInUser: null }
-    this._service = new Service()
+    super();
+    this.state = { loggedInUser: null };
+    this._service = new Service();
   }
 
   setTheUser = user => {
-    this.setState({ loggedInUser: user })
-    console.log("El método 'setTheUser' de App.js se ha invocado, pasando al estado 'loggedInUser:", this.state.loggedInUser)
-  }
+    this.setState({ loggedInUser: user });
+    console.log(
+      "El método 'setTheUser' de App.js se ha invocado, pasando al estado 'loggedInUser:",
+      this.state.loggedInUser
+    );
+  };
 
   fetchUser = () => {
     if (this.state.loggedInUser === null) {
-      this._service.loggedin()
-        .then(theLoggedInUserFromTheServer => this.setState({ loggedInUser: theLoggedInUserFromTheServer.data }))
+      this._service
+        .loggedin()
+        .then(theLoggedInUserFromTheServer =>
+          this.setState({ loggedInUser: theLoggedInUserFromTheServer.data })
+        )
         .catch(err => {
-          this.setState({ loggedInUser: false })
-          console.log({ err })
-        })
+          this.setState({ loggedInUser: false });
+          console.log({ err });
+        });
     }
-  }
-
+  };
 
   render() {
-
-    this.fetchUser()
+    this.fetchUser();
 
     return (
       <>
@@ -145,24 +145,79 @@ class App extends Component {
 
           <Route
             path="/nacional/new"
-            render={match => <Nacional setUser={this.setTheUser} {...match} />}
+            render={match =>
+              this.state.loggedInUser.perfil === "vendedor" ? (
+                <Nacional setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             path="/nacional/buy"
-            render={match => (
-              <NacionalBuy setUser={this.setTheUser} {...match} />
-            )}
+            render={match =>
+              this.state.loggedInUser ? (
+                <NacionalBuy
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             path="/nacional/list"
-            render={match => (
-              <NacionalList setUser={this.setTheUser} {...match} />
-            )}
+            render={match =>
+              this.state.loggedInUser.perfil === "vendedor" ? (
+                <NacionalList setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route
+            path="/nacional/order"
+            render={match =>
+              this.state.loggedInUser.perfil === "vendedor" ? (
+                <OrderList
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route
+            path="/nacional/myorder"
+            render={match =>
+              this.state.loggedInUser ? (
+                <MyOrderList
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
         </Switch>
       </>
     );
   }
 }
-
+{/* <Route
+  path="/profile"
+  render={() =>
+    this.state.loggedInUser ? (
+      <Profile loggedInUser={this.state.loggedInUser} />
+    ) : (
+      <Redirect to="/" />
+    )
+  }
+/>; */}
 export default App;

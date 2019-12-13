@@ -30,10 +30,13 @@ class LototurfCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.lototurf ? (
-      <Col className="coaster-card" md={6}>
+      <Col className="coaster-card" md={5}>
         <h4>Lototurf {this.state.lototurf[3]}</h4>
-        {this.state.lototurf[0].map(lototurf => (
-          <span className="numerosLototurf"> {lototurf} </span>
+        {this.state.lototurf[0].map((lototurf, index) => (
+          <span key={index}  className="numerosLototurf">
+            {" "}
+            {lototurf}{" "}
+          </span>
         ))}
         <span className="caballoLototurf"> {this.state.lototurf[1]} </span>
         <span className="reintegroLototurf"> {this.state.lototurf[2]} </span>

@@ -30,15 +30,20 @@ class juevesCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.jueves ? (
-      <Col className="coaster-card" md={6}>
+      <Col className="coaster-card" md={5}>
         <h4>Sorteo del Jueves del día {this.state.jueves[2]}</h4>
-        {this.state.jueves[0].map(jueves => (
-          <span className="numerosJueves"> {jueves} </span>
+        {this.state.jueves[0].map((jueves,index) => (
+          <span key={index} className="numerosJueves">
+            {" "}
+            {jueves}{" "}
+          </span>
         ))}
-        {this.state.jueves[1].map(jueves => (
-          <span className="reintegroJueves"> {jueves} </span>
+        {this.state.jueves[1].map((jueves,index) => (
+          <span key={index} className="reintegroJueves">
+            {" "}
+            {jueves}{" "}
+          </span>
         ))}
-        
       </Col>
     ) : (
       "Esperando resultados..."

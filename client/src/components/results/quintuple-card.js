@@ -31,8 +31,8 @@ class QuintupleCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.quintuple ? (
-      <Col className="coaster-card" md={6}>
-        <h4>Quintuple Plus del día {this.state.quintuple[1]}</h4>
+      <Col className="coaster-card" md={5}>
+        <h4>Quintuple Plus {this.state.quintuple[1]}</h4>
 
         {this.state.quintuple[0].map((quintuple, index) => (
           <p key={index} className="resultadosQuintuple">

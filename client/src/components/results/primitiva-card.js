@@ -29,10 +29,13 @@ class PrimitivaCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.primitiva ? (
-      <Col className="coaster-card" md={6}>
+      <Col className="coaster-card" md={5}>
         <h4>Primitiva del día {this.state.primitiva[4]} </h4>
-        {this.state.primitiva[0].map(primitiva => (
-          <span className="numerosPrimitiva"> {primitiva} </span>
+        {this.state.primitiva[0].map((primitiva ,index)=> (
+          <span key={index} className="numerosPrimitiva">
+            {" "}
+            {primitiva}{" "}
+          </span>
         ))}
         <span className="complementarioPrimi"> {this.state.primitiva[1]} </span>
         <span className="reintegroPrimitiva"> {this.state.primitiva[2]} </span>

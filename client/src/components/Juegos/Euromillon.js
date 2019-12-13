@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Container, Button, Col, Row } from "react-bootstrap";
 
-import EuroService from "../../service/Results.service";
+//import EuroService from "../../service/Results.service";
 
 class Euromillon extends Component {
   constructor(props) {

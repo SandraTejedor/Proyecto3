@@ -29,24 +29,31 @@ class QuinielaCard extends Component {
   //pintar la carta con el state
   render() {
     return this.state.quiniela ? (
-      <Col className="coaster-card" md={6}>
-        <h4>Quiniela  {this.state.quiniela[3]}</h4>
+      <Col className="coaster-card" md={5}>
+        <h4>Quiniela {this.state.quiniela[3]}</h4>
         <div className="laQuiniela">
           <div className="partidos">
             <ol>
-              {this.state.quiniela[0].map(quiniela => (
-                <li className="partidosQuiniela"> {quiniela} </li>
+              {this.state.quiniela[0].map((quiniela,index) => (
+                <li key={index} className="partidosQuiniela">
+                  {quiniela}
+                </li>
               ))}
             </ol>
           </div>
           <div className="resultados">
-            {this.state.quiniela[1].map(quiniela => (
-              <p className="resultadoPartidos"> {quiniela} </p>
+            {this.state.quiniela[1].map((quiniela,index) => (
+              <p key={index} className="resultadoPartidos">
+                {quiniela}
+              </p>
             ))}
           </div>
           <div className="quiniela">
-            {this.state.quiniela[2].map(quiniela => (
-              <p className="resultadoQuiniela"> {quiniela} </p>
+            {this.state.quiniela[2].map((quiniela,index) => (
+              <p key={index} className="resultadoQuiniela">
+                {" "}
+                {quiniela}{" "}
+              </p>
             ))}
           </div>
         </div>

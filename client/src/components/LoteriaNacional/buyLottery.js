@@ -22,22 +22,31 @@ class BuyLottery extends Component {
         7: 0,
         8: 0,
         9: 0,
-
-        fechaSorteo: ""
+        fechaSorteo: "", 
+        user: ""
       }
     };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    this._nationalService.postNacionalBuy(this.state.nacional);
+    this._nationalService.postNacionalBuy(
+      
+      this.state.nacional,
+      //this.props.loggedInUser
+      );
+      console.log(this.props.loggedInUser)
   };
 
   handleInputChange = e => {
     console.log("changin inou");
     let { name, value } = e.target;
     this.setState({
-      nacional: { ...this.state.nacional, [name]: value }
+      nacional: {
+        ...this.state.nacional,
+        [name]: value,
+        user: this.props.loggedInUser
+      }
     });
   };
 
