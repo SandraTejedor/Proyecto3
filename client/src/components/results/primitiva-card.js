@@ -30,16 +30,31 @@ class PrimitivaCard extends Component {
   render() {
     return this.state.primitiva ? (
       <Col className="coaster-card" md={5}>
-        <h4>Primitiva del día {this.state.primitiva[4]} </h4>
-        {this.state.primitiva[0].map((primitiva ,index)=> (
+        <h4 className="primitiva" >Primitiva del día {this.state.primitiva[4]} </h4>
+        {this.state.primitiva[0].map((primitiva, index) => (
           <span key={index} className="numerosPrimitiva">
             {" "}
             {primitiva}{" "}
           </span>
         ))}
-        <span className="complementarioPrimi"> {this.state.primitiva[1]} </span>
-        <span className="reintegroPrimitiva"> {this.state.primitiva[2]} </span>
-        <span className="joker"> {this.state.primitiva[3]} </span>
+        <p className="millon">
+          <span>
+            Complementario:{" "}
+            <span className="complementarioPrimi">
+              {this.state.primitiva[1]}
+            </span>
+          </span>
+          <span>
+            Reintegro:{" "}
+            <span className="reintegroPrimi">
+              {this.state.primitiva[2]}
+            </span>
+          </span>
+        </p>
+        <p className="joker">
+          El Joker:
+          <span className="eljoker"> {this.state.primitiva[3]}</span>{" "}
+        </p>
       </Col>
     ) : (
       "Esperando resultados..."

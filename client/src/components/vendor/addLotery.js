@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Container } from "react-bootstrap";
+import { Button, Form, Container, Toast } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,8 @@ class AddLottery extends Component {
     super(props);
     this._nationalService = new NationalService();
     this.state = {
-      otro: "",
+      showToast: false,
+      toastText: "",
       nacional: {
         numero: "",
         sorteo: "",
@@ -24,19 +25,11 @@ class AddLottery extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this._nationalService.postNacional(this.state.nacional);
+       this.handleToastOpen("se crea el decimo");
+    // .then(x => {
+    // })
+    // .catch(err => {});
   };
-
-  // handleNumberChange = e => {
-  //   let a = 0;
-  //   if (e.target.value == "") {
-  //     a = 0;
-  //   } else {
-  //     a = parseInt(e.target.value, 10);
-  //   }
-  //   this.setState({
-  //     nacional: { ...this.state.nacional, numero: a }
-  //   });
-  // };
 
   handleInputChange = e => {
     let { name, value } = e.target;
@@ -44,6 +37,9 @@ class AddLottery extends Component {
       nacional: { ...this.state.nacional, [name]: value }
     });
   };
+
+  handleToastClose = () => this.setState({ showToast: false, toastText: "" });
+   handleToastOpen = text => this.setState({ showToast: true, toastText: text });
 
   render() {
     return (
@@ -99,7 +95,7 @@ class AddLottery extends Component {
             >
               <option>Seleccionar</option>
               <option>Lotería de Navidad 2019</option>
-              <option>Lotería del Niño 2019</option>
+              <option>Lotería del Niño 2020</option>
             </Form.Control>
           </Form.Group>
           <div className="botones">
@@ -111,6 +107,24 @@ class AddLottery extends Component {
             </Link>
           </div>
         </Form>
+
+        <Toast
+          onClose={this.handleToastClose}
+          show={this.state.showToast}
+          delay={2000}
+          autohide
+          style={{
+            position: "fixed",
+            left: "170px",
+            bottom: "250px",
+            minWidth: "150px"
+          }}
+        >
+          <Toast.Header>
+            <strong className="mr-auto">Aviso</strong>
+          </Toast.Header>
+          <Toast.Body>{this.state.toastText}</Toast.Body>
+        </Toast>
       </Container>
     );
   }

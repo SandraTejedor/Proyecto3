@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Form, Container } from "react-bootstrap";
+import { Button, Form, Container, Toast } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,8 @@ class BuyLottery extends Component {
     super(props);
     this._nationalService = new NationalService();
     this.state = {
-      otro: "",
+      showToast: false,
+      toastText: "",
       nacional: {
         0: 0,
         1: 0,
@@ -22,7 +23,7 @@ class BuyLottery extends Component {
         7: 0,
         8: 0,
         9: 0,
-        fechaSorteo: "", 
+        fechaSorteo: "",
         user: ""
       }
     };
@@ -31,11 +32,11 @@ class BuyLottery extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this._nationalService.postNacionalBuy(
-      
-      this.state.nacional,
+      this.state.nacional
       //this.props.loggedInUser
-      );
-      console.log(this.props.loggedInUser)
+    );
+    this.handleToastOpen("pedido realizado");
+    console.log(this.props.loggedInUser);
   };
 
   handleInputChange = e => {
@@ -49,6 +50,9 @@ class BuyLottery extends Component {
       }
     });
   };
+
+  handleToastClose = () => this.setState({ showToast: false, toastText: "" });
+  handleToastOpen = text => this.setState({ showToast: true, toastText: text });
 
   render() {
     return (
@@ -67,7 +71,7 @@ class BuyLottery extends Component {
             >
               <option>Seleccionar</option>
               <option>Lotería de Navidad 2019</option>
-              <option>Lotería del Niño 2019</option>
+              <option>Lotería del Niño 2020</option>
             </Form.Control>
           </Form.Group>
 
@@ -175,6 +179,23 @@ class BuyLottery extends Component {
             </Link>
           </div>
         </Form>
+        <Toast
+          onClose={this.handleToastClose}
+          show={this.state.showToast}
+          delay={2000}
+          autohide
+          style={{
+            position: "fixed",
+            left: "170px",
+            bottom: "250px",
+            minWidth: "150px"
+          }}
+        >
+          <Toast.Header>
+            <strong className="mr-auto">Aviso</strong>
+          </Toast.Header>
+          <Toast.Body>{this.state.toastText}</Toast.Body>
+        </Toast>
       </Container>
     );
   }

@@ -8,12 +8,6 @@ export default class ResultServices {
     });
   }
 
-  //   signup = (username, password) =>
-  //     this._service.post("/signup", { username, password });
-  //   login = (username, password) =>
-  //     this._service.post("/login", { username, password });
-  //   logout = () => this._service.post("/logout");
-  //   loggedin = () => this._service.get("/loggedin");
   primitiva = () => this._service.get("/primitiva");
   euromillon = () => this._service.get("/euromillon");
   gordo = () => this._service.get("/gordo");

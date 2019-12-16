@@ -13,5 +13,6 @@ require("./configs/session.config")(app);
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/results", require("./routes/results.routes"));
 app.use("/api/nacional", require("./routes/nacional.routes"));
+app.use("/api/juegos", require("./routes/juegos.routes"));
 
 module.exports = app;

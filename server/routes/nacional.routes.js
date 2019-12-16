@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Nacional = require("../models/LoteriaNacional.model");
 const OrderNacional = require("../models/OrderNacional.model");
-
+const mailer = require("../configs/nodemailer.config");
 
 //permite al vendedor borrar los decimos que ya no quiere que esten a la venta
 router.get("/delete/:id", (req, res) => {
@@ -19,27 +19,48 @@ router.get("/list", (req, res) => {
     .catch(err => console.log("DB error", err));
 });
 
-//todos los pedidos
+//todos los pedidos en estado pendiente
 router.get("/order", (req, res) => {
   const nacional = req.body;
-  OrderNacional.find(nacional)
+  OrderNacional.find({ status: "pedido" })
+    .then(theOrder => res.json(theOrder))
+    .catch(err => console.log("DB error", err));
+});
+
+//todos los pedidos que se han realizado
+router.get("/sold", (req, res) => {
+  const nacional = req.body;
+  OrderNacional.find({ status: "vendido" })
     .then(theOrder => res.json(theOrder))
     .catch(err => console.log("DB error", err));
 });
 
 //borra los pedidos que ya se han realizado
+
 router.get("/deleteOrder/:id", (req, res) => {
-  OrderNacional.findByIdAndDelete(req.params.id)
-    .then(() => res.json({ message: "delete ok" }))
-    .catch(err => console.log(err));
+  OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
+    // .then(() => res.json({ message: "el cambio ok" }))
+    // .then(x=>console.log(x , "el user email", x.user.email))
+    .then(x => {
+      mailer.sendMail({
+        from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
+        to: x.user.email,
+        subject: `Aquí está tu décimo de ${x.fechaSorteo}`,
+        text: `Querid@ ${x.user.username},  aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}`,
+        html: `<p>Querid@ ${x.user.username}, aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}</p>`
+      });
+    })
+    .then(() => res.json({ message: "el cambio ok" }))
+    .catch(err => console.log("soy el error del email", err));
 });
 
 //los pedidos de cada usuario
 router.get("/myorder", (req, res) => {
   const nacional = req.body;
-  // OrderNacional.find({ user.username : "sandra" })
-  //   .then(theOrder => res.json(theOrder))
-  //   .catch(err => console.log("DB error", err));
+  console.log("el req user", req.user);
+  OrderNacional.find({ "user.username": req.user.username })
+    .then(theOrder => res.json(theOrder))
+    .catch(err => console.log("DB error", err));
 });
 
 function findDecimo(cantidad, acabado, fecha, user) {
@@ -109,13 +130,6 @@ function findDecimo(cantidad, acabado, fecha, user) {
             }
           )
             .then(theNewLottery => {
-              // console.log(
-              //   "el objeto a borrar es: ",
-              //   theNewLottery,
-              //   "su id es:",
-              //   theNewLottery._id
-              // );
-
               ///// Borra el decimo.
               Nacional.deleteOne({
                 fechaSorteo: respues[i].fechaSorteo,
@@ -141,11 +155,10 @@ function findDecimo(cantidad, acabado, fecha, user) {
     .catch(err => console.log("soy el error", err));
 }
 
-
 //opcion de compra de loteria nacional
 router.post("/buy", (req, res) => {
   const nacional = req.body;
-  console.log("soy la nacional" ,nacional);
+  console.log("soy la nacional", nacional);
   for (let key in nacional) {
     if (nacional[key] !== 0 && key != "fechaSorteo" && nacional[key] !== "0") {
       console.log("la key", key, "el valor", nacional[key], "el sorteo");

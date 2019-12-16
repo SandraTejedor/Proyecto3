@@ -23,7 +23,10 @@ class MyNationalOrder extends React.Component {
   updateNationalList = () => {
     this._nationalService
       .myOrderList()
-      .then(nacional => this.setState({ nacional: nacional.data }))
+      .then(nacional => {
+        console.log(nacional);
+        this.setState({ nacional: nacional.data });
+      })
       .catch(err => console.log("Error", err));
   };
   // deleteHandler = id => {
@@ -37,7 +40,7 @@ class MyNationalOrder extends React.Component {
     return (
       <section>
         <Container>
-          <h1>Mi lista de pedidos:</h1>
+          <h1>Lista de pedidos de {this.props.loggedInUser.username}:</h1>
 
           <Row>
             {/* {this.state.nacional.map(nacional => (

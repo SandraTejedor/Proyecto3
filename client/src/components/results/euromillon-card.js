@@ -30,20 +30,23 @@ class EuromillonCard extends Component {
   render() {
     return this.state.euromillon ? (
       <Col className="coaster-card" md={5}>
-        <h4>Euromillón del día {this.state.euromillon[3]}</h4>
+        <h4 className="euromillon">Euromillón del día {this.state.euromillon[3]}</h4>
         {this.state.euromillon[0].map((euro, index) => (
           <span key={index} className="numerosEuro">
             {" "}
             {euro}{" "}
           </span>
         ))}
-        {this.state.euromillon[1].map((euro,index) => (
-          <span key={index}  className="estrellasEuro">
+        {this.state.euromillon[1].map((euro, index) => (
+          <span key={index} className="estrellasEuro ">
             {" "}
             {euro}{" "}
           </span>
         ))}
-        <span className="elmillon">{this.state.euromillon[2]}</span>
+        <p className="millon">
+          El Millón:
+          <span className="elmillon"> {this.state.euromillon[2]}</span>
+        </p>
       </Col>
     ) : (
       "Esperando resultados..."

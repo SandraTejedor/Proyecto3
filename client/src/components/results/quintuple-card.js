@@ -32,11 +32,11 @@ class QuintupleCard extends Component {
   render() {
     return this.state.quintuple ? (
       <Col className="coaster-card" md={5}>
-        <h4>Quintuple Plus {this.state.quintuple[1]}</h4>
+        <h4 className="quintuplePlus">Quintuple Plus {this.state.quintuple[1]}</h4>
 
         {this.state.quintuple[0].map((quintuple, index) => (
           <p key={index} className="resultadosQuintuple">
-            Carrera {index + 1}: {quintuple}
+            Carrera {index + 1}: <span className="quintuple">{quintuple}</span>
           </p>
         ))}
       </Col>

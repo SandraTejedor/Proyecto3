@@ -36,7 +36,7 @@ section {
   margin: 0 auto;
 }
 
-li{
+.espacio{
   margin-bottom: 16px;
 }
 ol{
@@ -45,8 +45,285 @@ ol{
 .resultados{
   margin-right: 10px;
 }
+
+.numerosEuro{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #94acdf;
+}
+.euromillon{
+  background-color: #94acdf;
+}
+
+
+.numerosPrimitiva{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #54a46b;
+}
+.primitiva{
+  background-color: #54a46b;
+}
+.complementarioPrimi{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #6ea27c;
+}
+.reintegroPrimi{
+  padding: 2px 5px 2px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #6ea27c;
+}
+
+.numerosBonoloto{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #a75749;
+}
+.bonoloto{
+  background-color: #a75749;
+}
+.complementarioBono{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #a76d63;
+}
+.reintegroBono{
+  padding: 2px 5px 2px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #a76d63;
+}
+
+.numerosGordo{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #767171;
+}
+.gordo{
+  background-color: #767171;
+}
+.reintegroGordo{
+    padding: 2px 5px 2px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #9b9898;
+}
+.numerosLototurf{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #d58f26;
+}
+.lototurf{
+  background-color: #d58f26;
+}
+.caballoLototurf{
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #e8ae57;
+}
+.reintegroLototurf{
+  padding: 2px 5px 2px 5px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #e8ae57;
+}
+
+.millon {
+  margin-top: 10px;
+}
+
+.elmillon{
+  color: #225edf
+}
+
+.joker {
+  margin-top: 10px;
+}
+
+.eljoker{
+  color: #206533
+}
 .coaster-card{
-  border: 0.5px solid black;
-  margin-bottom: 5px;
-  margin-right: 10px;
+  text-align: center;
+}
+.quintuple{
+  padding: 5px 6px 5px 4px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #b0b81b;
+}
+.quintuplePlus{
+  background-color: #b0b81b;
+}
+
+.resultadoQuiniela {
+  padding-left: 6px;
+     width: 34px; 
+     height: 24px; 
+     background: #428bca;
+}
+.quiniela2{
+  background-color: #428bca;
+}
+
+.resultadoQuinigol {
+  padding-left: 6px;
+     width: 40px; 
+     height: 24px; 
+     background: #98c3e9;
+}
+.quinigol2{
+  background-color:  #98c3e9;
+}
+
+.reintegroSabado{
+    padding: 3px 4px 3px 6px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #df94c1;
+}
+.sabado{
+  background-color:  #df94c1;
+}
+
+.reintegroJueves{
+    padding: 3px 4px 3px 6px;
+  margin-right: 2px;
+  width: 120px;
+     height: 120px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: #964012;
+}
+.jueves{
+  background-color: #964012;
+}
+.numerosJueves{
+  font-size: 25px;
+}
+
+.numerosSabado{
+  font-size: 25px;
+}
+.center{
+  text-align: center;
+}
+
+
+    /* .star-five {
+      margin: 50px 0;
+      position: relative;
+      display: block;
+      color: red;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid red;
+      border-left: 100px solid transparent;
+      transform: rotate(35deg);
+    }
+    .star-five:before {
+      border-bottom: 80px solid red;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      content: '';
+      transform: rotate(-35deg);
+    }
+    .star-five:after {
+      position: absolute;
+      display: block;
+      color: red;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid red;
+      border-left: 100px solid transparent;
+      transform: rotate(-70deg);
+      content: '';
+    } */
+.celda{
+  width:22px;
+  text-align: center;
+  
+  
+}
+
+.nuCol{
+  text-align: center;
+  font-weight: 900;
 }

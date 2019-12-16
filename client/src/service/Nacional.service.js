@@ -8,8 +8,6 @@ export default class Services {
     });
   }
 
-  //   getAllCoasters = () => this._service.get("/getAllCoasters");
-  //   getOneCoaster = id => this._service.get(`/${id}`);
   postNacional = nacional => this._service.post("/new", nacional);
   postNacionalBuy = nacionalBuy => this._service.post("/buy", nacionalBuy);
   nacionalList = nacionalList => this._service.get("/list", nacionalList);
@@ -17,4 +15,5 @@ export default class Services {
   nacionalOrder = nacionalOrder => this._service.get("/order", nacionalOrder);
   deleteOrder = deleteOrder => this._service.get(`/deleteOrder/${deleteOrder}`);
   myOrderList = myOrderList => this._service.get("/myorder", myOrderList);
+  sold = sold => this._service.get("/sold", sold);
 }

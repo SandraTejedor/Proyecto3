@@ -15,7 +15,7 @@ class NationalCard extends Component {
 
   render() {
     return (
-      <Col className="coaster-card" md={6}>
+      <Col className="" md={4}>
         <h4>Sorteo {this.props.fechaSorteo} </h4>
         <p>
           Número: <strong>{this.props.numero}</strong>
@@ -24,6 +24,7 @@ class NationalCard extends Component {
         <p> Fracción: {this.props.fraccion} </p>
         <p> Estado: {this.props.status} </p>
         <p> Usuario: {this.props.user.username} </p>
+        <p> Email: {this.props.user.email} </p>
         <Button
           variant="dark"
           onClick={() => this.props.delete(this.props._id)}

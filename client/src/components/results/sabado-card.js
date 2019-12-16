@@ -31,19 +31,23 @@ class SabadoCard extends Component {
   render() {
     return this.state.sabado ? (
       <Col className="coaster-card" md={5}>
-        <h4>Sorteo del Sábado del día {this.state.sabado[2]}</h4>
-        {this.state.sabado[0].map((sabado, index) => (
-          <span key={index} className="numerosSabado">
-            {" "}
-            {sabado}{" "}
-          </span>
-        ))}
-        {this.state.sabado[1].map((sabado, index) => (
-          <span key={index} className="reintegroSabado">
-            {" "}
-            {sabado}{" "}
-          </span>
-        ))}
+        <h4 className="sabado" >Sorteo del Sábado del día {this.state.sabado[2]}</h4>
+        <div className="center">
+          {this.state.sabado[0].map((sabado, index) => (
+            <span key={index} className="numerosSabado">
+              {" "}
+              {sabado}{" "}
+            </span>
+          ))}
+          <p className="millon">
+            {this.state.sabado[1].map((sabado, index) => (
+              <span key={index} className="reintegroSabado">
+                {" "}
+                {sabado}{" "}
+              </span>
+            ))}
+          </p>
+        </div>
       </Col>
     ) : (
       "Esperando resultados..."

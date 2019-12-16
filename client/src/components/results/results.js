@@ -29,7 +29,7 @@ class Results extends Component {
     return (
       <section>
         <Container>
-          <h1>Resultados</h1>
+          <h1>Resultados de la semana</h1>
         </Container>
 
         <Container>

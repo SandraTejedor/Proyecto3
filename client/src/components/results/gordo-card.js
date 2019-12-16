@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Col from "react-bootstrap/Col";
 import ResultService from "../../service/Results.service";
 
@@ -30,14 +30,17 @@ class GordoCard extends Component {
   render() {
     return this.state.gordo ? (
       <Col className="coaster-card" md={5}>
-        <h4>Gordo del día {this.state.gordo[2]}</h4>
-        {this.state.gordo[0].map((gordo , index)=> (
-          <span key={index}  className="numerosGordo">
+        <h4 className="gordo">Gordo del día {this.state.gordo[2]}</h4>
+        {this.state.gordo[0].map((gordo, index) => (
+          <span key={index} className="numerosGordo">
             {" "}
             {gordo}{" "}
           </span>
         ))}
-        <span className="reintegroGordo">{this.state.gordo[1]}</span>
+        <p className="millon">
+          NºClave:{" "}
+          <span className="reintegroGordo"> {this.state.gordo[1]}</span>
+        </p>
       </Col>
     ) : (
       "Esperando resultados..."

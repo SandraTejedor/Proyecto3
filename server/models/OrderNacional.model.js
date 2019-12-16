@@ -9,7 +9,12 @@ const OrderNacionalSchema = new Schema(
     sorteo: String,
     fechaSorteo: String,
     status: String,
-    user: {}
+    user: {
+      username: String,
+      _id: String,
+      perfil:String,
+      email:String
+    }
   },
   {
     timestamps: {

@@ -8,7 +8,7 @@ class SignupForm extends Component {
     super(props);
     this._service = new Service();
     this.state = {
-      user: { username: "", password: "" },
+      user: { username: "", password: "" , email: "" , perfil:""},
       showToast: false,
       toastText: ""
     };
@@ -16,12 +16,12 @@ class SignupForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { username, password } = this.state.user;
+    const { username, password, email, perfil } = this.state.user;
     this._service
-      .signup(username, password)
+      .signup(username, password, email, perfil)
       .then(theNewUser => {
         this.props.setUser(theNewUser.data);
-        this.setState({ username: "", password: "" });
+        this.setState({ username: "", password: "", email: "", perfil: "" });
         this.props.history.push('/') 
       })
         .catch(err => this.handleToastOpen(err.response.data.message));
@@ -57,6 +57,16 @@ class SignupForm extends Component {
               name="password"
               onChange={this.handleInputChange}
               value={this.state.password}
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label>Email
+            </Form.Label>
+            <Form.Control
+              type="email"
+              name="email"
+              onChange={this.handleInputChange}
+              value={this.state.email}
             />
           </Form.Group>
           <Button variant="dark" type="submit">

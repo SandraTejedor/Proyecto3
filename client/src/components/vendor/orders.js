@@ -4,8 +4,6 @@ import NationalService from "../../service/Nacional.service";
 
 import { Container, Row, Button, Modal } from "react-bootstrap";
 
-// import CoasterCard from "./Coaster-card";
-// import CoasterForm from "./Coaster-form";
 import NationalOrderCard from "../../components/LoteriaNacional/NacionalOrder-Card";
 
 class NationalOrder extends React.Component {

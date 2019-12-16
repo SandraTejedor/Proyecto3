@@ -15,7 +15,7 @@ class NationalCard extends Component {
 
   render() {
     return (
-      <Col className="coaster-card" md={6}>
+      <Col className="" md={4}>
         <h4>Sorteo {this.props.fechaSorteo} </h4>
         <p>
           Número: <strong>{this.props.numero}</strong>

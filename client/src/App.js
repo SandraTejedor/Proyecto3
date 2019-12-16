@@ -37,6 +37,10 @@ import NacionalBuy from "./components/LoteriaNacional/buyLottery";
 import NacionalList from "./components/LoteriaNacional/list";
 import OrderList from "./components/vendor/orders";
 import MyOrderList from "./components/auth/myOrders"
+import Sold from "./components/vendor/sold";
+
+
+import JuegosOrder from "./components/vendor/juegosOrders";
 
 class App extends Component {
   constructor() {
@@ -170,7 +174,7 @@ class App extends Component {
           <Route
             path="/nacional/list"
             render={match =>
-              this.state.loggedInUser.perfil === "vendedor" ? (
+              (this.state.loggedInUser && this.state.loggedInUser.perfil === "vendedor") ? (
                 <NacionalList setUser={this.setTheUser} {...match} />
               ) : (
                 <Redirect to="/" />
@@ -205,19 +209,35 @@ class App extends Component {
               )
             }
           />
+          <Route
+            path="/nacional/sold"
+            render={match =>
+              this.state.loggedInUser.perfil === "vendedor" ? (
+                <Sold
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route
+            path="/juegos/order"
+            render={match => (
+              <JuegosOrder
+                setUser={this.setTheUser}
+                {...match}
+                loggedInUser={this.state.loggedInUser}
+              />
+            )}
+          />
+          
         </Switch>
       </>
     );
   }
 }
-{/* <Route
-  path="/profile"
-  render={() =>
-    this.state.loggedInUser ? (
-      <Profile loggedInUser={this.state.loggedInUser} />
-    ) : (
-      <Redirect to="/" />
-    )
-  }
-/>; */}
+
 export default App;

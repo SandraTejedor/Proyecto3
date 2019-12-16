@@ -33,15 +33,15 @@ class QuinigolCard extends Component {
   render() {
     return this.state.quinigol ? (
       <Col className="coaster-card" md={5}>
-        <h4>
+        <h4 className="quinigol2">
           Quinigol {this.state.quinigol[3]}
           {/* {this.state.timestamps.created_at} */}
         </h4>
         <div className="elQuinigol">
           <div className="partidos">
             <ol>
-              {this.state.quinigol[0].map((quinigol,index) => (
-                <li key={index} className="partidosQuinigol">
+              {this.state.quinigol[0].map((quinigol, index) => (
+                <li key={index} className="partidosQuinigol espacio">
                   {quinigol}
                 </li>
               ))}
@@ -55,9 +55,8 @@ class QuinigolCard extends Component {
             ))}
           </div>
           <div className="quiniela">
-            {this.state.quinigol[2].map((quinigol,index) => (
+            {this.state.quinigol[2].map((quinigol, index) => (
               <p key={index} className="resultadoQuinigol">
-            
                 {quinigol}
               </p>
             ))}
