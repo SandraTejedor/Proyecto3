@@ -28,6 +28,7 @@ class BonolotoCard extends Component {
 
   //pintar la carta con el state
   render() {
+    console.log(this.state.bonoloto);
     return this.state.bonoloto ? (
       <Col className="coaster-card" md={5}>
         <h4 className="bonoloto">BonoLoto del día {this.state.bonoloto[3]}</h4>
@@ -56,6 +57,5 @@ class BonolotoCard extends Component {
     );
   }
 }
-
 
 export default BonolotoCard;
