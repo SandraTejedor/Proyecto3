@@ -13,8 +13,10 @@ class MyNationalOrder extends React.Component {
     super(props);
     this._nationalService = new NationalService();
     this.state = {
-      nacional: [],
-      otro: ""
+      bonoloto: [],
+      primitiva: [],
+      gordo: [],
+      euromillon: []
     };
   }
 
@@ -40,7 +42,7 @@ class MyNationalOrder extends React.Component {
     return (
       <section>
         <Container>
-          <h1>Lista de pedidos de {this.props.loggedInUser.username}:</h1>
+          <h1>Lista de pedidos de {this.props.loggedInUser.username} de Lotería Nacional:</h1>
 
           <Row>
             {/* {this.state.nacional.map(nacional => (

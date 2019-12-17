@@ -63,6 +63,9 @@ class Navigation extends Component {
                 <NavDropdown.Item as="li">
                   <Link to="/juegos/order">Lista de pedidos de juegos</Link>
                 </NavDropdown.Item>
+                <NavDropdown.Item as="li">
+                  <Link to="/juegos/sold">Lista de ventas de juegos</Link>
+                </NavDropdown.Item>
                 {/* <NavDropdown.Item as="li">
                   <Link to="/nacional/list">Lista de lotería disponible</Link>
                 </NavDropdown.Item>
@@ -115,6 +118,9 @@ class Navigation extends Component {
                 <NavDropdown.Item as="li">
                   <Link to="/juegos/euromillon">Euromillones</Link>
                 </NavDropdown.Item>
+                <NavDropdown.Item as="li">
+                  <Link to="/juegos/myorder">Mi lista de pedidos</Link>
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown
                 title="Loteria Nacional"
@@ -122,14 +128,12 @@ class Navigation extends Component {
                 as="li"
               >
                 <NavDropdown.Item as="li">
-                  <Link to="/nacional/buy">Compra online</Link>
+                  <Link to="/nacional/buy">Compra online de décimos</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="li">
                   <Link to="/nacional/myorder">Mis pedidos</Link>
                 </NavDropdown.Item>
-               
               </NavDropdown>
-              
             </Nav>
             <Nav className="ml-auto">
               <Nav.Link as="li">

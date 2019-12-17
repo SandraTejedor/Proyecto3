@@ -19,6 +19,11 @@ router.get("/bonoloto", (req, res) => {
     .then(thelist => res.json(thelist))
     .catch(err => console.log("DB error", err));
 });
+router.get("/bonolotoSold", (req, res) => {
+  JuegosBonoloto.find({ "bonoloto.status": "vendido" })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
 router.get("/deleteBonoOrder/:id", (req, res) => {
   JuegosBonoloto.findByIdAndUpdate(req.params.id, {
     "bonoloto.status": "vendido"
@@ -46,6 +51,14 @@ router.get("/deleteBonoOrder/:id", (req, res) => {
     .catch(err => console.log("soy el error del email", err));
 });
 
+router.get("/myOrderListBono", (req, res) => {
+  JuegosBonoloto.find({ "bonoloto.user.username": req.user.username })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
+
+
+
 router.post("/primitiva", (req, res) => {
   const primitiva = req.body;
    primitiva.user = req.user;
@@ -56,6 +69,11 @@ router.post("/primitiva", (req, res) => {
 });
 router.get("/primitiva", (req, res) => {
   JuegosPrimitiva.find({ "primitiva.status": "pendiente" })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
+router.get("/primitivaSold", (req, res) => {
+  JuegosPrimitiva.find({ "primitiva.status": "vendido" })
     .then(thelist => res.json(thelist))
     .catch(err => console.log("DB error", err));
 });
@@ -85,6 +103,11 @@ router.get("/deletePrimiOrder/:id", (req, res) => {
     .then(() => res.json({ message: "el cambio ok" }))
     .catch(err => console.log("soy el error del email", err));
 });
+router.get("/myOrderListPrimi", (req, res) => {
+  JuegosPrimitiva.find({ "primitiva.user.username": req.user.username })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
 
 router.post("/gordo", (req, res) => {
   const gordo = req.body;
@@ -96,6 +119,11 @@ router.post("/gordo", (req, res) => {
 });
 router.get("/gordo", (req, res) => {
   JuegosGordo.find({ "gordo.status": "pendiente" })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
+router.get("/gordoSold", (req, res) => {
+  JuegosGordo.find({ "gordo.status": "vendido" })
     .then(thelist => res.json(thelist))
     .catch(err => console.log("DB error", err));
 });
@@ -125,6 +153,11 @@ router.get("/deleteGordoOrder/:id", (req, res) => {
     .then(() => res.json({ message: "el cambio ok" }))
     .catch(err => console.log("soy el error del email", err));
 });
+router.get("/myOrderListGordo", (req, res) => {
+  JuegosGordo.find({ "gordo.user.username": req.user.username })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
 
 router.post("/euromillon", (req, res) => {
   const euromillon = req.body;
@@ -136,6 +169,11 @@ router.post("/euromillon", (req, res) => {
 });
 router.get("/euromillon", (req, res) => {
   JuegosEuromillon.find({ "euromillon.status": "pendiente" })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
+});
+router.get("/euromillonSold", (req, res) => {
+  JuegosEuromillon.find({ "euromillon.status": "vendido" })
     .then(thelist => res.json(thelist))
     .catch(err => console.log("DB error", err));
 });
@@ -165,6 +203,12 @@ router.get("/deleteEuroOrder/:id", (req, res) => {
     })
     .then(() => res.json({ message: "el cambio ok" }))
     .catch(err => console.log("soy el error del email", err));
+});
+
+router.get("/myOrderListEuro", (req, res) => {
+  JuegosEuromillon.find({ "euromillon.user.username": req.user.username })
+    .then(thelist => res.json(thelist))
+    .catch(err => console.log("DB error", err));
 });
 
 module.exports = router;

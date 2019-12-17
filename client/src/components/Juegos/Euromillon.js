@@ -55,6 +55,7 @@ class Euromillon extends Component {
     let valor = e.target.getAttribute("value");
     let copia = { ...this.state.euromillon.numeros };
     if (copia[columna].length < 5) {
+      e.target.innerHTML = "X";
       copia[columna].push(valor);
     }
     this.setState({
@@ -68,6 +69,7 @@ class Euromillon extends Component {
     let valor = e.target.getAttribute("value");
     let copia = { ...this.state.euromillon.estrellas };
     if (copia[columna].length < 2) {
+      e.target.innerHTML = "X";
       copia[columna].push(valor);
     }
     this.setState({
@@ -82,6 +84,8 @@ class Euromillon extends Component {
     for (let i = start; i <= end; i++) {
       arrButtons1.push(
         <div
+          style={{ color: "red" }}
+          key={i}
           className="celda"
           variant="dark"
           type="submit"
@@ -101,6 +105,8 @@ class Euromillon extends Component {
     for (let i = start; i <= end; i++) {
       arrButtons1.push(
         <div
+          style={{ color: "red" }}
+          key={i}
           className="celda"
           variant="dark"
           type="submit"

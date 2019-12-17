@@ -36,11 +36,13 @@ import Nacional from "./components/vendor/addLotery";
 import NacionalBuy from "./components/LoteriaNacional/buyLottery";
 import NacionalList from "./components/LoteriaNacional/list";
 import OrderList from "./components/vendor/orders";
-import MyOrderList from "./components/auth/myOrders"
+import MyOrderList from "./components/auth/myOrders";
 import Sold from "./components/vendor/sold";
 
-
 import JuegosOrder from "./components/vendor/juegosOrders";
+import JuegosSold from "./components/vendor/juegosSold";
+
+import MyJuegosOrder from "./components/auth/myOrdersJuegos";
 
 class App extends Component {
   constructor() {
@@ -95,7 +97,9 @@ class App extends Component {
           <Route
             path="/profile"
             render={() =>
-              this.state.loggedInUser ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/profile" />
+              ) : this.state.loggedInUser ? (
                 <Profile loggedInUser={this.state.loggedInUser} />
               ) : (
                 <Redirect to="/" />
@@ -112,45 +116,60 @@ class App extends Component {
           />
 
           <Route
-            path="/loteriaNacional/jueves"
-            render={match => <Jueves setUser={this.setTheUser} {...match} />}
-          />
-          <Route
-            path="/loteriaNacional/sabado"
-            render={match => <Sabado setUser={this.setTheUser} {...match} />}
-          />
-          <Route
-            path="/loteriaNacional/navidad"
-            render={match => <Navidad setUser={this.setTheUser} {...match} />}
-          />
-          <Route
-            path="/loteriaNacional/elniño"
-            render={match => <ElNiño setUser={this.setTheUser} {...match} />}
-          />
-
-          <Route
             path="/juegos/bonoLoto"
-            render={match => <BonoLoto setUser={this.setTheUser} {...match} />}
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/bonoloto" />
+              ) : this.state.loggedInUser ? (
+                <BonoLoto setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             path="/juegos/primitiva"
-            render={match => <Primitiva setUser={this.setTheUser} {...match} />}
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/primitiva" />
+              ) : this.state.loggedInUser ? (
+                <Primitiva setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             path="/juegos/euromillon"
-            render={match => (
-              <Euromillon setUser={this.setTheUser} {...match} />
-            )}
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/euromillon" />
+              ) : this.state.loggedInUser ? (
+                <Euromillon setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
           <Route
             path="/juegos/elGordo"
-            render={match => <ElGordo setUser={this.setTheUser} {...match} />}
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/gordo" />
+              ) : this.state.loggedInUser ? (
+                <ElGordo setUser={this.setTheUser} {...match} />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
 
           <Route
             path="/nacional/new"
             render={match =>
-              this.state.loggedInUser.perfil === "vendedor" ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/new" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
                 <Nacional setUser={this.setTheUser} {...match} />
               ) : (
                 <Redirect to="/" />
@@ -160,7 +179,9 @@ class App extends Component {
           <Route
             path="/nacional/buy"
             render={match =>
-              this.state.loggedInUser ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/buy" />
+              ) : this.state.loggedInUser ? (
                 <NacionalBuy
                   setUser={this.setTheUser}
                   {...match}
@@ -174,7 +195,9 @@ class App extends Component {
           <Route
             path="/nacional/list"
             render={match =>
-              (this.state.loggedInUser && this.state.loggedInUser.perfil === "vendedor") ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/list" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
                 <NacionalList setUser={this.setTheUser} {...match} />
               ) : (
                 <Redirect to="/" />
@@ -184,7 +207,9 @@ class App extends Component {
           <Route
             path="/nacional/order"
             render={match =>
-              this.state.loggedInUser.perfil === "vendedor" ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/order" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
                 <OrderList
                   setUser={this.setTheUser}
                   {...match}
@@ -198,7 +223,9 @@ class App extends Component {
           <Route
             path="/nacional/myorder"
             render={match =>
-              this.state.loggedInUser ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/myorder" />
+              ) : this.state.loggedInUser ? (
                 <MyOrderList
                   setUser={this.setTheUser}
                   {...match}
@@ -212,7 +239,9 @@ class App extends Component {
           <Route
             path="/nacional/sold"
             render={match =>
-              this.state.loggedInUser.perfil === "vendedor" ? (
+              this.state.loggedInUser == null ? (
+                <Redirect to="/nacional/sold" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
                 <Sold
                   setUser={this.setTheUser}
                   {...match}
@@ -225,15 +254,52 @@ class App extends Component {
           />
           <Route
             path="/juegos/order"
-            render={match => (
-              <JuegosOrder
-                setUser={this.setTheUser}
-                {...match}
-                loggedInUser={this.state.loggedInUser}
-              />
-            )}
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/order" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
+                <JuegosOrder
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
           />
-          
+          <Route
+            path="/juegos/myorder"
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/myorder" />
+              ) : this.state.loggedInUser ? (
+                <MyJuegosOrder
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                <Redirect to="/" />
+              )
+            }
+          />
+          <Route
+            path="/juegos/sold"
+            render={match =>
+              this.state.loggedInUser == null ? (
+                <Redirect to="/juegos/sold" />
+              ) : this.state.loggedInUser.perfil === "vendedor" ? (
+                <JuegosSold
+                  setUser={this.setTheUser}
+                  {...match}
+                  loggedInUser={this.state.loggedInUser}
+                />
+              ) : (
+                    <Redirect to="/" />
+                  )
+            }
+          />
         </Switch>
       </>
     );

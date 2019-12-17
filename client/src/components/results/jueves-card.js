@@ -33,6 +33,7 @@ class juevesCard extends Component {
       <Col className="coaster-card" md={5}>
         <h4 className="jueves">Sorteo del Jueves del día {this.state.jueves[2]}</h4>
         <div className="center">
+          <p>1ER PREMIO - 2º PREMIO</p>
           {this.state.jueves[0].map((jueves, index) => (
             <span key={index} className="numerosJueves">
               {" "}

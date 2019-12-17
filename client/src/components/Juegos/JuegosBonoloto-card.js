@@ -29,6 +29,7 @@ class JuegosBonolotoCard extends Component {
         <p>Columna 6: {this.props.bonoloto.numeros[6].join(" ")}</p>
         <p>Columna 7: {this.props.bonoloto.numeros[7].join(" ")}</p>
         <p>Columna 8: {this.props.bonoloto.numeros[8].join(" ")}</p>
+        <p>Estado: {this.props.bonoloto.status}</p>
         <p>Usuario: {this.props.bonoloto.user.username}</p>
         <Button
           variant="dark"

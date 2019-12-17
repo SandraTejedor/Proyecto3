@@ -41,6 +41,7 @@ class JuegosEuromillonCard extends Component {
           Columna 5: {this.props.euromillon.numeros[5].join(" ")} | Estrellas:
           {this.props.euromillon.estrellas[5].join(" ")}
         </p>
+        <p>Estado: {this.props.euromillon.status}</p>
         <p>Usuario: {this.props.euromillon.user.username}</p>
         <Button
           variant="dark"

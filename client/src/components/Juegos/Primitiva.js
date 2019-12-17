@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button, Row, Col , Form, Toast} from "react-bootstrap";
+import { Container, Button, Row, Col, Form, Toast } from "react-bootstrap";
 
 import PrimitivaService from "../../service/Juegos.service";
 class Primitiva extends Component {
@@ -54,6 +54,7 @@ class Primitiva extends Component {
     let valor = e.target.getAttribute("value");
     let copia = { ...this.state.primitiva.numeros };
     if (copia[columna].length < 6) {
+      e.target.innerHTML = "X";
       copia[columna].push(valor);
     }
     this.setState({
@@ -66,6 +67,8 @@ class Primitiva extends Component {
     for (let i = start; i <= end; i++) {
       arrButtons1.push(
         <div
+          style={{ color: "red" }}
+          key={i}
           className="celda"
           variant="dark"
           type="submit"

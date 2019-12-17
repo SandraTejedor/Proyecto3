@@ -28,6 +28,7 @@ class JuegosGordoCard extends Component {
         <p>Columna 4: {this.props.gordo.numeros[4].join(" ")}</p>
         <p>Columna 5: {this.props.gordo.numeros[5].join(" ")}</p>
         <p>Columna 6: {this.props.gordo.numeros[6].join(" ")}</p>
+        <p>Estado: {this.props.gordo.status}</p>
         <p>Usuario: {this.props.gordo.user.username}</p>
         <Button
           variant="dark"

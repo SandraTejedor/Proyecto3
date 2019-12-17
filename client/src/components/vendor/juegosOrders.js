@@ -109,6 +109,7 @@ class JuegosOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Primitivas pendientes</h4>
           <Row>
             {this.state.primitiva.map(primitiva => (
@@ -120,6 +121,7 @@ class JuegosOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Gordos pendientes</h4>
           <Row>
             {this.state.gordo.map(gordo => (
@@ -131,6 +133,7 @@ class JuegosOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Euromillones pendientes</h4>
           <Row>
             {this.state.euromillon.map(euromillon => (

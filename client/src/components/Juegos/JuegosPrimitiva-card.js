@@ -31,6 +31,7 @@ class JuegosPrimitivaCard extends Component {
         <p>Columna 6: {this.props.primitiva.numeros[6].join(" ")}</p>
         <p>Columna 7: {this.props.primitiva.numeros[7].join(" ")}</p>
         <p>Columna 8: {this.props.primitiva.numeros[8].join(" ")}</p>
+        <p>Estado: {this.props.primitiva.status}</p>
         <p>Usuario: {this.props.primitiva.user.username}</p>
         <Button
           variant="dark"
