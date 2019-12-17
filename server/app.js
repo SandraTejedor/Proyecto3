@@ -16,7 +16,11 @@ app.use("/api/nacional", require("./routes/nacional.routes"));
 app.use("/api/juegos", require("./routes/juegos.routes"));
 
 
-//copiar aqui la ruta a heroku
+//para heroku
+
+app.use((req, res)=>{
+    res.sendFile(__dirname+"/public/index.html")
+})
 
 
 module.exports = app;

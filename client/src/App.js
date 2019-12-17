@@ -21,10 +21,10 @@ import Results from "./components/results/results";
 import Contact from "./components/contact/contact";
 
 /* CUSTOM LOTERIA NACIONAL COMPONENTS */
-import ElNiño from "./components/LoteriaNacional/ElNiño";
-import Jueves from "./components/LoteriaNacional/Jueves";
-import Navidad from "./components/LoteriaNacional/Navidad";
-import Sabado from "./components/LoteriaNacional/Sabado";
+// import ElNiño from "./components/LoteriaNacional/ElNiño";
+// import Jueves from "./components/LoteriaNacional/Jueves";
+// import Navidad from "./components/LoteriaNacional/Navidad";
+// import Sabado from "./components/LoteriaNacional/Sabado";
 
 /* CUSTOM JUEGOS COMPONENTS */
 import BonoLoto from "./components/Juegos/BonoLoto";

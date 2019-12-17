@@ -4,9 +4,9 @@ export default class Services {
 
     constructor() {
         this._service = axios.create({
-            baseURL: 'http://localhost:5000/api/auth',
-            withCredentials: true   // RUTAS PERSISTENTES
-        })
+          baseURL: `${process.env.dev.REACT_APP_URL}/auth`,
+          withCredentials: true // RUTAS PERSISTENTES
+        });
     }
 
     signup = (username, password, email, perfil) => this._service.post('/signup', { username, password , email, perfil})

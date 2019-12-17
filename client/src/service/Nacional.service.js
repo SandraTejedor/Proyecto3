@@ -3,7 +3,7 @@ import axios from "axios";
 export default class Services {
   constructor() {
     this._service = axios.create({
-      baseURL: "http://localhost:5000/api/nacional",
+      baseURL: `${process.env.dev.REACT_APP_URL}/nacional`,
       withCredentials: true // RUTAS PERSISTENTES
     });
   }
