@@ -13,5 +13,8 @@ export default class Services {
   login = (username, password) =>
     this._service.post("/login", { username, password });
   logout = () => this._service.post("/logout");
-  loggedin = () => this._service.get("/loggedin");
+  loggedin = () => {
+    console.log("------", `${process.env.REACT_APP_URL}/auth`, "----");
+    return this._service.get("/loggedin");
+  };
 }

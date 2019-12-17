@@ -20,7 +20,7 @@ class Navigation extends Component {
     const saludo = this.props.loggedInUser
       ? this.props.loggedInUser.username
       : ""; //"invitado"
-    console.log("soy el login", this.props.loggedInUser);
+    // console.log("soy el login", this.props.loggedInUser);
     //let a = this.props.loggedInUser;
     if (
       this.props.loggedInUser &&
@@ -55,11 +55,7 @@ class Navigation extends Component {
                   <Link to="/nacional/sold">Lista de ventas de lotería</Link>
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown
-                title="Juegos"
-                id="basic-nav-dropdown"
-                as="li"
-              >
+              <NavDropdown title="Juegos" id="basic-nav-dropdown" as="li">
                 <NavDropdown.Item as="li">
                   <Link to="/juegos/order">Lista de pedidos de juegos</Link>
                 </NavDropdown.Item>
@@ -169,7 +165,6 @@ class Navigation extends Component {
               <Nav.Link as="li">
                 <Link to="/contact">Contacto</Link>
               </Nav.Link>
-             
             </Nav>
             <Nav className="ml-auto">
               <Nav.Link as="li">

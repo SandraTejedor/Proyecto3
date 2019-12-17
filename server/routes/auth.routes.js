@@ -102,6 +102,7 @@ authRoutes.post("/logout", (req, res, next) => {
 authRoutes.get("/loggedin", (req, res, next) => {
   // req.isAuthenticated() is defined by passport
   if (req.isAuthenticated()) {
+    console.log("sending user", req.user);
     res.status(200).json(req.user);
     return;
   }
