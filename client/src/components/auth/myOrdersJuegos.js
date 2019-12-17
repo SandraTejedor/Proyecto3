@@ -4,10 +4,10 @@ import JuegosService from "../../service/Juegos.service";
 
 import { Container, Row, Button, Modal } from "react-bootstrap";
 
-import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-card"
-import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-card";
-import GordoOrderCard from "../../components/Juegos/JuegosGordo-card";
-import EuromillonOrderCard from "../../components/Juegos/JuegosEuromillon-card";
+import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-cardSold"
+import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-cardSold";
+import GordoOrderCard from "../../components/Juegos/JuegosGordo-cardSold";
+import EuromillonOrderCard from "../../components/Juegos/JuegosEuromillon-cardSold";
 
 class MyNationalOrder extends React.Component {
   constructor(props) {
@@ -66,33 +66,7 @@ class MyNationalOrder extends React.Component {
       .catch(err => console.log("Error", err));
   };
 
-  // deleteHandlerBono = id => {
-  //   this._juegosService
-  //     .deleteBonoOrder(id)
-  //     .then(x => this.updateBonolotoList())
-  //     .catch(err => console.log("Error", err));
-  // };
 
-  // deleteHandlerPrimi = id => {
-  //   this._juegosService
-  //     .deletePrimiOrder(id)
-  //     .then(x => this.updatePrimitivaList())
-  //     .catch(err => console.log("Error", err));
-  // };
-
-  // deleteHandlerGordo = id => {
-  //   this._juegosService
-  //     .deleteGordoOrder(id)
-  //     .then(x => this.updateGordoList())
-  //     .catch(err => console.log("Error", err));
-  // };
-
-  // deleteHandlerEuro = id => {
-  //   this._juegosService
-  //     .deleteEuroOrder(id)
-  //     .then(x => this.updateEuromillonList())
-  //     .catch(err => console.log("Error", err));
-  // };
   render() {
     return (
       <section>
