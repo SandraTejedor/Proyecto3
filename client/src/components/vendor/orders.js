@@ -27,7 +27,9 @@ class NationalOrder extends React.Component {
   deleteHandler = id => {
     this._nationalService
       .deleteOrder(id)
-      .then(x => this.updateNationalList())
+      .then(x => {
+        console.log("estoy haciendo el console log")
+        this.updateNationalList()})
       .catch(err => console.log("Error", err));
   };
 
