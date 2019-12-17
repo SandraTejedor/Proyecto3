@@ -211,9 +211,9 @@ class ElGordo extends Component {
           autohide
           style={{
             position: "fixed",
-            left: "170px",
-            bottom: "250px",
-            minWidth: "150px"
+            left: "200px",
+            bottom: "150px",
+            minwidth: "250px"
           }}
         >
           <Toast.Header>
