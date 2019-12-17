@@ -15,7 +15,7 @@ export default class JuegosServices {
   deleteBonoOrder = deleteBonoOrder =>
     this._service.get(`/deleteBonoOrder/${deleteBonoOrder}`);
   myOrderListBono = myOrderListBono =>
-    this._service.get("/myorderBono", myOrderListBono);
+    this._service.get("/myOrderListBono", myOrderListBono);
   primitiva = primitiva => this._service.post("/primitiva", primitiva);
   getprimitiva = primitiva => this._service.get("/primitiva", primitiva);
   getprimitivaSold = primitivaSold =>

@@ -4,7 +4,7 @@ import JuegosService from "../../service/Juegos.service";
 
 import { Container, Row, Button, Modal } from "react-bootstrap";
 
-import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-cardSold"
+import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-cardSold";
 import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-cardSold";
 import GordoOrderCard from "../../components/Juegos/JuegosGordo-cardSold";
 import EuromillonOrderCard from "../../components/Juegos/JuegosEuromillon-cardSold";
@@ -66,7 +66,6 @@ class MyNationalOrder extends React.Component {
       .catch(err => console.log("Error", err));
   };
 
-
   render() {
     return (
       <section>
@@ -123,6 +122,5 @@ class MyNationalOrder extends React.Component {
     );
   }
 }
-
 
 export default MyNationalOrder;
