@@ -10,7 +10,10 @@ const User = require("../models/User.model");
 const bcryptSalt = 10;
 
 mongoose
-  .connect("mongodb://localhost/proyecto3", { useNewUrlParser: true })
+  .connect(
+    `mongodb+srv://sandra:sandrasandra@cluster0-ht579.mongodb.net/proyecto3?retryWrites=true&w=majority`,
+    { useNewUrlParser: true }
+  )
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -31,21 +34,21 @@ let users = [
     password: bcrypt.hashSync("pedro", bcrypt.genSaltSync(bcryptSalt)),
     perfil: "vendedor"
   }
-]
+];
 
 User.deleteMany()
-.then(() => {
-  return User.create(users)
-})
-.then(usersCreated => {
-  console.log(`${usersCreated.length} users created with the following id:`);
-  console.log(usersCreated.map(u => u._id));
-})
-.then(() => {
-  // Close properly the connection to Mongoose
-  mongoose.disconnect()
-})
-.catch(err => {
-  mongoose.disconnect()
-  throw err
-})
+  .then(() => {
+    return User.create(users);
+  })
+  .then(usersCreated => {
+    console.log(`${usersCreated.length} users created with the following id:`);
+    console.log(usersCreated.map(u => u._id));
+  })
+  .then(() => {
+    // Close properly the connection to Mongoose
+    mongoose.disconnect();
+  })
+  .catch(err => {
+    mongoose.disconnect();
+    throw err;
+  });
