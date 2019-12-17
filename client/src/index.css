@@ -1,5 +1,6 @@
 body {
   font-weight: 100;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -326,4 +327,14 @@ ol{
 .nuCol{
   text-align: center;
   font-weight: 900;
+}
+
+.indexBack{
+
+  background-image: url(./rueda.jpg);
+  object-fit: cover;
+
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
 }

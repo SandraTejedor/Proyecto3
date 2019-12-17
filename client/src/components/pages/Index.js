@@ -5,11 +5,13 @@ import { Container } from "react-bootstrap";
 
 const Index = () => {
   return (
-    <Container>
-      <section>
-        <h1>El Calvo de la Lotería</h1>
-      </section>
-    </Container>
+    <div className="indexBack">
+      <Container>
+        <section>
+          <h1>El Calvo de la Lotería</h1>
+        </section>
+      </Container>
+    </div>
   );
 };
 
