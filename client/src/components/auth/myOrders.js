@@ -13,10 +13,8 @@ class MyNationalOrder extends React.Component {
     super(props);
     this._nationalService = new NationalService();
     this.state = {
-      bonoloto: [],
-      primitiva: [],
-      gordo: [],
-      euromillon: []
+      nacional: [],
+     
     };
   }
 
@@ -31,12 +29,6 @@ class MyNationalOrder extends React.Component {
       })
       .catch(err => console.log("Error", err));
   };
-  // deleteHandler = id => {
-  //   this._nationalService
-  //     .deleteOrder(id)
-  //     .then(x => this.updateNationalList())
-  //     .catch(err => console.log("Error", err));
-  // };
 
   render() {
     return (
@@ -45,15 +37,9 @@ class MyNationalOrder extends React.Component {
           <h1>Lista de pedidos de {this.props.loggedInUser.username} de Lotería Nacional:</h1>
 
           <Row>
-            {/* {this.state.nacional.map(nacional => (
-              <NationalCard
-                key={nacional._id}
-                {...nacional}
-                delete={this.deleteHandler}
-                updateNationalList={this.updateNationalList}
-              />
-            )).sort()} */}
-            {this.state.nacional
+           {console.log("el state", this.state.nacional)}
+            {
+            this.state.nacional
               .sort((a, b) => {
                 if (a.fechaSorteo > b.fechaSorteo) {
                   return 1;
@@ -92,7 +78,8 @@ class MyNationalOrder extends React.Component {
                   delete={this.deleteHandler}
                   updateNationalList={this.updateNationalList}
                 />
-              ))}
+              ))
+          }
           </Row>
         </Container>
       </section>
