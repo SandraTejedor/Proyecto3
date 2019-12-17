@@ -3,7 +3,7 @@ import axios from "axios";
 export default class JuegosServices {
   constructor() {
     this._service = axios.create({
-      baseURL: `${process.env.dev.REACT_APP_URL}/juegos`,
+      baseURL: `${process.env.REACT_APP_URL}/juegos`,
       withCredentials: true // RUTAS PERSISTENTES
     });
   }
