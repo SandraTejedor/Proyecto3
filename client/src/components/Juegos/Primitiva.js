@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Button, Row, Col, Form, Toast } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import PrimitivaService from "../../service/Juegos.service";
 class Primitiva extends Component {
@@ -27,10 +28,19 @@ class Primitiva extends Component {
       }
     };
   }
+  // componentDidMount = () => this.updatePrimitiva();
+
+  // updatePrimitiva = () => {
+  //   this._primitivaService
+  //     .primitiva(this.state.primitiva)
+  //     .then(nacional => this.setState({ nacional: nacional.data }))
+  //     .catch(err => console.log("Error", err));
+  // };
   handleSubmit = e => {
     e.preventDefault();
     this._primitivaService.primitiva(this.state.primitiva);
     this.handleToastOpen("se crea el pedido");
+  
   };
 
   handleClick = e => {

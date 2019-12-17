@@ -3,6 +3,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Service from "../../service/Auth.service";
 
+import imgCalvo from "../../../src/images/calvo-fondo.png"
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,10 @@ class Navigation extends Component {
       return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
-            <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
+            <Navbar.Brand href="/">
+              <img className="imgNav" src={imgCalvo} />
+              El Calvo de la Lotería
+            </Navbar.Brand>
           </Navbar>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
@@ -90,7 +94,10 @@ class Navigation extends Component {
       return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
-            <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
+            <Navbar.Brand href="/">
+              <img className="imgNav" src={imgCalvo} />
+              El Calvo de la Lotería
+            </Navbar.Brand>
           </Navbar>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
@@ -151,7 +158,10 @@ class Navigation extends Component {
       return (
         <Navbar bg="dark" variant="dark" expand="md">
           <Navbar bg="dark">
-            <Navbar.Brand href="/">El Calvo de la Lotería</Navbar.Brand>
+            <Navbar.Brand href="/">
+              <img className="imgNav" src={imgCalvo} />
+              El Calvo de la Lotería
+            </Navbar.Brand>
           </Navbar>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>

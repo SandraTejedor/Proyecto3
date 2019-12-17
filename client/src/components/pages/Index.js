@@ -3,13 +3,18 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
+import imagenCalvo from "./../../../src/images/calvo-fondo.png"
+
 
 const Index = () => {
   return (
     <div className="indexBack">
       <Container>
         <section>
-          <h1>El Calvo de la Lotería</h1>
+          <h1>
+            <img className="imgCal" src={imagenCalvo} />
+            El Calvo de la Lotería
+          </h1>
           <Row>
             <Col md={4}></Col>
             <Col md={6}>
@@ -18,8 +23,8 @@ const Index = () => {
                 Ver los <Link to="/results"> resultados de la semana </Link>
               </p>
               <p>
-                Realizar un pedido de lotería o jugar a los diferentes
-                sorteos semanales una vez haga
+                Realizar un pedido de lotería o jugar a los diferentes sorteos
+                semanales una vez haga
                 <Link to="/signup"> SignUp </Link> o haga{" "}
                 <Link to="/login"> Login </Link>
               </p>
