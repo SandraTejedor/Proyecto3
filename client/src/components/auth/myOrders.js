@@ -6,7 +6,7 @@ import { Container, Row, Button, Modal } from "react-bootstrap";
 
 // import CoasterCard from "./Coaster-card";
 // import CoasterForm from "./Coaster-form";
-import MyOrderCard from "../../components/LoteriaNacional/NacionalOrder-Card";
+import MyOrderCard from "../../components/LoteriaNacional/NacionalOrder-CardUser";
 
 class MyNationalOrder extends React.Component {
   constructor(props) {
