@@ -35,23 +35,26 @@ router.get("/sold", (req, res) => {
     .catch(err => console.log("DB error", err));
 });
 
-//borra los pedidos que ya se han realizado
+//borra los pedidos que ya se han realizado y mando el email al usuario con el decimo
 
-router.get("/deleteOrder/:id", (req, res) => {
-  OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
-    // .then(() => res.json({ message: "el cambio ok" }))
-    // .then(x=>console.log(x , "el user email", x.user.email))
-    .then(x => {
-      mailer.sendMail({
-        from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
-        to: x.user.email,
-        subject: `Aquí está tu décimo de ${x.fechaSorteo}`,
-        text: `Querid@ ${x.user.username},  aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}`,
-        html: `<p>Querid@ ${x.user.username}, aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}</p>`
-      });
-    })
-    .then(() => res.json({ message: "el cambio ok" }))
-    .catch(err => console.log("soy el error del email", err));
+router.post("/deleteOrder/:id", (req, res) => {
+  console.log("soy el file", req.file, req);
+
+  // OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
+  //   // .then(() => res.json({ message: "el cambio ok" }))
+  //   // .then(x=>console.log(x , "el user email", x.user.email))
+  //   .then(x => {
+  //     mailer.sendMail({
+  //       from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
+  //       to: x.user.email,
+  //       subject: `Aquí está tu décimo de ${x.fechaSorteo}`,
+  //       // attachments: [pdfBase64],
+  //       text: `Querid@ ${x.user.username},  aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}`,
+  //       html: `<p>Querid@ ${x.user.username}, aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}</p>`
+  //     });
+  //   })
+  //   .then(() => res.json({ message: "el cambio ok" }))
+  //   .catch(err => console.log("soy el error del email", err));
 });
 
 //los pedidos de cada usuario

@@ -105,11 +105,10 @@ class Euromillon extends Component {
     for (let i = start; i <= end; i++) {
       arrButtons1.push(
         <div
-          style={{ color: "red" }}
-          key={i}
+          style={{ color: "red", backgroundColor: "green" }}
+          key={i}  
           className="celda"
-          variant="dark"
-          type="submit"
+          type="button"
           name={col}
           onClick={this.handleDivStar}
           value={i}
@@ -189,45 +188,30 @@ class Euromillon extends Component {
             <Col xs={0.25}>{this.generateStars(1, 4, 1)}</Col>
             <Col xs={0.25}>{this.generateStars(5, 8, 1)}</Col>
             <Col xs={0.25}>{this.generateStars(9, 11, 1)}</Col>
-            <Col xs={0.25}>{""} </Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <div variant="dark" className="nuCol">
+            <div variant="dark" className="nuCol estCol">
               2
             </div>
             <Col xs={0.25}>{this.generateStars(1, 4, 2)}</Col>
             <Col xs={0.25}>{this.generateStars(5, 8, 2)}</Col>
             <Col xs={0.25}>{this.generateStars(9, 11, 2)}</Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <div variant="dark" className="nuCol">
+            <div variant="dark" className="nuCol estCol">
               3
             </div>
             <Col xs={0.25}>{this.generateStars(1, 4, 3)}</Col>
             <Col xs={0.25}>{this.generateStars(5, 8, 3)}</Col>
             <Col xs={0.25}>{this.generateStars(9, 11, 3)}</Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <div variant="dark" className="nuCol">
+            <div variant="dark" className="nuCol estCol">
               4
             </div>
             <Col xs={0.25}>{this.generateStars(1, 4, 4)}</Col>
             <Col xs={0.25}>{this.generateStars(5, 8, 4)}</Col>
-            <Col xs={0.25}>{this.generateStars(9, 11, 4)}</Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <div variant="dark" className="nuCol">
+            <Col xs={0.25}>{this.generateStars(9, 11, 4)}</Col>            
+            <div variant="dark" className="nuCol estCol">
               5
             </div>
             <Col xs={0.25}>{this.generateStars(1, 4, 5)}</Col>
             <Col xs={0.25}>{this.generateStars(5, 8, 5)}</Col>
             <Col xs={0.25}>{this.generateStars(9, 11, 5)}</Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
-            <Col xs={0.25}></Col>
           </Row>
           <br></br>
           <Form.Group>

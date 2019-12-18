@@ -5,6 +5,7 @@ import NationalService from "../../service/Nacional.service";
 import { Container, Row, Button, Modal } from "react-bootstrap";
 
 import NationalOrderCard from "../../components/LoteriaNacional/NacionalOrder-Card";
+import jsPDF from "jspdf";
 
 class NationalOrder extends React.Component {
   constructor(props) {
@@ -16,7 +17,10 @@ class NationalOrder extends React.Component {
     };
   }
 
-  componentDidMount = () => this.updateNationalList();
+  componentDidMount = () => {
+    //
+    this.updateNationalList();
+  };
 
   updateNationalList = () => {
     this._nationalService
@@ -24,12 +28,19 @@ class NationalOrder extends React.Component {
       .then(nacional => this.setState({ nacional: nacional.data }))
       .catch(err => console.log("Error", err));
   };
+
   deleteHandler = id => {
+    let pdf = new jsPDF();
+    pdf.text(0, 0, "Hello World!");
+    let pdfBase64 = pdf.output("arraybuffer");
+    console.log(pdfBase64);
+
     this._nationalService
-      .deleteOrder(id)
+      .deleteOrder(id, pdfBase64)
       .then(x => {
-        console.log("estoy haciendo el console log")
-        this.updateNationalList()})
+        // console.log("estoy haciendo el console log");
+        this.updateNationalList();
+      })
       .catch(err => console.log("Error", err));
   };
 
@@ -48,7 +59,8 @@ class NationalOrder extends React.Component {
                 updateNationalList={this.updateNationalList}
               />
             )).sort()} */}
-            {this.state.nacional.sort((a, b) => {
+            {this.state.nacional
+              .sort((a, b) => {
                 if (a.fechaSorteo > b.fechaSorteo) {
                   return 1;
                 }
@@ -78,14 +90,15 @@ class NationalOrder extends React.Component {
                     }
                   }
                 }
-              }).map(nacional => (
-              <NationalOrderCard
-                key={nacional._id}
-                {...nacional}
-                delete={this.deleteHandler}
-                updateNationalList={this.updateNationalList}
-              />
-            ))}
+              })
+              .map(nacional => (
+                <NationalOrderCard
+                  key={nacional._id}
+                  {...nacional}
+                  delete={this.deleteHandler}
+                  updateNationalList={this.updateNationalList}
+                />
+              ))}
           </Row>
         </Container>
       </section>

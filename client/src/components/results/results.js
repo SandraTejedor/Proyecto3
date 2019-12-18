@@ -33,7 +33,7 @@ class Results extends Component {
         </Container>
 
         <Container>
-          <Row>
+          <Row className="res">
             <EuromillonCard />
             <BonolotoCard />
             <PrimitivaCard />
@@ -44,7 +44,7 @@ class Results extends Component {
             <QuinigolCard />
           </Row>
           <hr></hr>
-          <Row>
+          <Row className="res">
             <JuevesCard />
             <SabadoCard />
           </Row>

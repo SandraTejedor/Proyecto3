@@ -1,284 +1,285 @@
 body {
   font-weight: 100;
-
+  background-color: #ffedcf;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 100;
   margin: 20px 0;
 }
 
 section {
-  margin: 50px 0
+  margin: 50px 0;
 }
 
-
- .navbar-nav a {
-    color: inherit;
+.navbar-nav a {
+  color: inherit;
 }
 
-.laQuiniela{
-  display:flex
+.laQuiniela {
+  display: flex;
 }
 
-.elQuinigol{
-  display:flex
+.elQuinigol {
+  display: flex;
 }
 
-.form-group{
+.form-group {
   margin: 0 auto;
-  
+
   margin-bottom: 1.5em;
   width: 40%;
 }
 
-.botones{
-  
+.botones {
   margin: 0 auto;
 }
 
-.espacio{
+.espacio {
   margin-bottom: 16px;
 }
-ol{
+ol {
   margin-right: 15px;
 }
-.resultados{
+.resultados {
   margin-right: 10px;
 }
 
-.numerosEuro{
+.numerosEuro {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #94acdf;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #94acdf;
 }
-.euromillon{
+.euromillon {
   background-color: #94acdf;
 }
 
-
-.numerosPrimitiva{
+.numerosPrimitiva {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #54a46b;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #54a46b;
 }
-.primitiva{
+.primitiva {
   background-color: #54a46b;
 }
-.complementarioPrimi{
+.complementarioPrimi {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #6ea27c;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #6ea27c;
 }
-.reintegroPrimi{
+.reintegroPrimi {
   padding: 2px 5px 2px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #6ea27c;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #6ea27c;
 }
 
-.numerosBonoloto{
+.numerosBonoloto {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #a75749;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #a75749;
 }
-.bonoloto{
+.bonoloto {
   background-color: #a75749;
 }
-.complementarioBono{
+.complementarioBono {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #a76d63;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #a76d63;
 }
-.reintegroBono{
+.reintegroBono {
   padding: 2px 5px 2px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #a76d63;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #a76d63;
 }
 
-.numerosGordo{
+.numerosGordo {
   padding: 5px 4px 5px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #767171;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #767171;
 }
-.gordo{
+.gordo {
   background-color: #767171;
 }
-.reintegroGordo{
-    padding: 2px 5px 2px 5px;
-  margin-right: 2px;
-  width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #9b9898;
-}
-.numerosLototurf{
-  padding: 5px 4px 5px 5px;
-  margin-right: 2px;
-  width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #d58f26;
-}
-.lototurf{
-  background-color: #d58f26;
-}
-.caballoLototurf{
-  padding: 5px 4px 5px 5px;
-  margin-right: 2px;
-  width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #e8ae57;
-}
-.reintegroLototurf{
+.reintegroGordo {
   padding: 2px 5px 2px 5px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #e8ae57;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #9b9898;
+}
+.numerosLototurf {
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #d58f26;
+}
+.lototurf {
+  background-color: #d58f26;
+}
+.caballoLototurf {
+  padding: 5px 4px 5px 5px;
+  margin-right: 2px;
+  width: 120px;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #e8ae57;
+}
+.reintegroLototurf {
+  padding: 2px 5px 2px 5px;
+  margin-right: 2px;
+  width: 120px;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #e8ae57;
 }
 
 .millon {
   margin-top: 10px;
 }
 
-.elmillon{
-  color: #225edf
+.elmillon {
+  color: #225edf;
 }
 
 .joker {
   margin-top: 10px;
 }
 
-.eljoker{
-  color: #206533
+.eljoker {
+  color: #206533;
 }
-.coaster-card{
+.coaster-card {
   text-align: center;
 }
-.quintuple{
+.quintuple {
   padding: 5px 6px 5px 4px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #b0b81b;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #b0b81b;
 }
-.quintuplePlus{
+.quintuplePlus {
   background-color: #b0b81b;
 }
 
 .resultadoQuiniela {
   padding-left: 6px;
-     width: 34px; 
-     height: 24px; 
-     background: #428bca;
+  width: 34px;
+  height: 24px;
+  background: #428bca;
 }
-.quiniela2{
+.quiniela2 {
   background-color: #428bca;
 }
 
 .resultadoQuinigol {
   padding-left: 6px;
-     width: 40px; 
-     height: 24px; 
-     background: #98c3e9;
+  width: 40px;
+  height: 24px;
+  background: #98c3e9;
 }
-.quinigol2{
-  background-color:  #98c3e9;
-}
-
-.reintegroSabado{
-    padding: 3px 4px 3px 6px;
-  margin-right: 2px;
-  width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #df94c1;
-}
-.sabado{
-  background-color:  #df94c1;
+.quinigol2 {
+  background-color: #98c3e9;
 }
 
-.reintegroJueves{
-    padding: 3px 4px 3px 6px;
+.reintegroSabado {
+  padding: 3px 4px 3px 6px;
   margin-right: 2px;
   width: 120px;
-     height: 120px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     background: #964012;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #df94c1;
 }
-.jueves{
+.sabado {
+  background-color: #df94c1;
+}
+
+.reintegroJueves {
+  padding: 3px 4px 3px 6px;
+  margin-right: 2px;
+  width: 120px;
+  height: 120px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #964012;
+}
+.jueves {
   background-color: #964012;
 }
-.numerosJueves{
+.numerosJueves {
   font-size: 25px;
 }
 
-.numerosSabado{
+.numerosSabado {
   font-size: 25px;
 }
-.center{
+.center {
   text-align: center;
 }
 
-
-    /* .star-five {
+/* .star-five {
       margin: 50px 0;
       position: relative;
       display: block;
@@ -317,14 +318,12 @@ ol{
       transform: rotate(-70deg);
       content: '';
     } */
-.celda{
-  width:22px;
+.celda {
+  width: 22px;
   text-align: center;
-  
-  
 }
 
-.nuCol{
+.nuCol {
   text-align: center;
   font-weight: 900;
 }
@@ -339,19 +338,41 @@ ol{
   background-repeat: no-repeat;
 } */
 
-
-.imgCal{
+.imgCal {
   width: 7%;
 }
 
-.imgNav{
-   width: 50px;
+.imgNav {
+  width: 50px;
 }
 
-.navbar{
+.navbar {
   font-size: 22px;
 }
 
-.imgInicio{
+.imgInicio {
   width: 100%;
+}
+
+.estCol {
+  margin-left: 65px;
+}
+
+.res {
+  display: flex;
+  justify-content: center;
+}
+
+.estrellasEuro {
+  text-align: center;
+  padding:10px;
+}
+
+.laimagen{
+  position: absolute;
+  width:40px;
+  object-fit: cover;
+  z-index: -100;
+  margin-top: -7px;
+  margin-left: -10px;
 }

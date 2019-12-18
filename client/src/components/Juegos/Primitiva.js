@@ -28,14 +28,7 @@ class Primitiva extends Component {
       }
     };
   }
-  // componentDidMount = () => this.updatePrimitiva();
-
-  // updatePrimitiva = () => {
-  //   this._primitivaService
-  //     .primitiva(this.state.primitiva)
-  //     .then(nacional => this.setState({ nacional: nacional.data }))
-  //     .catch(err => console.log("Error", err));
-  // };
+ 
   handleSubmit = e => {
     e.preventDefault();
     this._primitivaService.primitiva(this.state.primitiva);
@@ -58,8 +51,7 @@ class Primitiva extends Component {
   handleToastOpen = text => this.setState({ showToast: true, toastText: text });
 
   handleDiv = e => {
-    // console.log(e.target.getAttribute("name"));
-    // console.log(e.target.getAttribute("value"));
+
     let columna = e.target.getAttribute("name");
     let valor = e.target.getAttribute("value");
     let copia = { ...this.state.primitiva.numeros };

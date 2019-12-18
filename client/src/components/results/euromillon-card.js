@@ -4,6 +4,8 @@ import ResultService from "../../service/Results.service";
 
 //import { Link } from "react-router-dom";
 
+import imagenestrella from "./../../../src/images/estrell-trans.png";
+
 class EuromillonCard extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,9 @@ class EuromillonCard extends Component {
   render() {
     return this.state.euromillon ? (
       <Col className="coaster-card" md={5}>
-        <h4 className="euromillon">Euromillón del día {this.state.euromillon[3]}</h4>
+        <h4 className="euromillon">
+          Euromillón del día {this.state.euromillon[3]}
+        </h4>
         {this.state.euromillon[0].map((euro, index) => (
           <span key={index} className="numerosEuro">
             {" "}
@@ -39,7 +43,10 @@ class EuromillonCard extends Component {
         ))}
         {this.state.euromillon[1].map((euro, index) => (
           <span key={index} className="estrellasEuro ">
-            {" "}
+            <span>
+              {" "}
+              <img src={imagenestrella} className="laimagen" />
+            </span>
             {euro}{" "}
           </span>
         ))}
