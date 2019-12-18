@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 import imagenCalvo from "./../../../src/images/calvo-fondo.png"
+import imagen from "./../../../src/images/Layer.png";
 
 
 const Index = () => {
@@ -12,26 +13,35 @@ const Index = () => {
       <Container>
         <section>
           <h1>
-            <img className="imgCal" src={imagenCalvo} />
-            El Calvo de la Lotería
+            {" "}
+            {/* <img className="imgCal" src={imagenCalvo} /> */}
+            {/* El Calvo de la Lotería */}
           </h1>
+          <br></br>
+          <br></br>
           <Row>
-            <Col md={4}></Col>
-            <Col md={6}>
-              <h5>En está página podrás:</h5>
-              <p>
-                Ver los <Link to="/results"> resultados de la semana </Link>
-              </p>
-              <p>
-                Realizar un pedido de lotería o jugar a los diferentes sorteos
-                semanales una vez haga
-                <Link to="/signup"> SignUp </Link> o haga{" "}
-                <Link to="/login"> Login </Link>
-              </p>
-              <p>
-                Para mas información <Link to="/contact"> contacte </Link> con
-                nosotros
-              </p>
+            <Col md={4}>
+              <img className="imgInicio" src={imagen} />
+            </Col>
+            <Col md={2}></Col>
+            <Col md={5}>
+              <h3>En está página podrás:</h3>
+              <br></br>
+              <div style={{fontSize: "20px"}}>
+                <p>
+                  Ver los <Link to="/results"> resultados de la semana </Link>
+                </p>
+                <p>
+                  Realizar un pedido de lotería o jugar a los diferentes sorteos
+                  semanales una vez haga
+                  <Link to="/signup"> Signup </Link> o haga{" "}
+                  <Link to="/login"> Login </Link>
+                </p>
+                <p>
+                  Para mas información <Link to="/contact"> contacte </Link> con
+                  nosotros
+                </p>
+              </div>
             </Col>
           </Row>
         </section>

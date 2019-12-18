@@ -28,7 +28,8 @@ class Navigation extends Component {
       this.props.loggedInUser.perfil === "vendedor"
     ) {
       return (
-        <Navbar bg="dark" variant="dark" expand="md">
+       
+        <Navbar bg="dark" variant="dark" expand="md" className="navbar">
           <Navbar bg="dark">
             <Navbar.Brand href="/">
               <img className="imgNav" src={imgCalvo} />
