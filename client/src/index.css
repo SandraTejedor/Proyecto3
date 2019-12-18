@@ -1,6 +1,7 @@
 body {
   font-weight: 100;
-  background-color: #ffedcf;
+  /* background-color: #ffedcf; */
+  background-color: #FFEDD3
 }
 
 h1,
@@ -197,6 +198,20 @@ ol {
   color: #225edf;
 }
 
+.estrellasEuro {
+  text-align: center;
+  padding: 10px;
+}
+
+.laimagen {
+  position: absolute;
+  width: 40px;
+  object-fit: cover;
+  z-index: -100;
+  margin-top: -7px;
+  margin-left: -10px;
+}
+
 .joker {
   margin-top: 10px;
 }
@@ -279,45 +294,6 @@ ol {
   text-align: center;
 }
 
-/* .star-five {
-      margin: 50px 0;
-      position: relative;
-      display: block;
-      color: red;
-      width: 0px;
-      height: 0px;
-      border-right: 100px solid transparent;
-      border-bottom: 70px solid red;
-      border-left: 100px solid transparent;
-      transform: rotate(35deg);
-    }
-    .star-five:before {
-      border-bottom: 80px solid red;
-      border-left: 30px solid transparent;
-      border-right: 30px solid transparent;
-      position: absolute;
-      height: 0;
-      width: 0;
-      top: -45px;
-      left: -65px;
-      display: block;
-      content: '';
-      transform: rotate(-35deg);
-    }
-    .star-five:after {
-      position: absolute;
-      display: block;
-      color: red;
-      top: 3px;
-      left: -105px;
-      width: 0px;
-      height: 0px;
-      border-right: 100px solid transparent;
-      border-bottom: 70px solid red;
-      border-left: 100px solid transparent;
-      transform: rotate(-70deg);
-      content: '';
-    } */
 .celda {
   width: 22px;
   text-align: center;
@@ -328,26 +304,19 @@ ol {
   font-weight: 900;
 }
 
-/* .indexBack{
-  
-  background-image: url(./rueda.jpg);
-  object-fit: cover;
-
-  height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-} */
-
 .imgCal {
   width: 7%;
 }
 
 .imgNav {
-  width: 50px;
+  width: 60px;
+  height:80%;
+  margin-right: 15px;
 }
 
 .navbar {
   font-size: 22px;
+  height: 95px;
 }
 
 .imgInicio {
@@ -363,16 +332,6 @@ ol {
   justify-content: center;
 }
 
-.estrellasEuro {
-  text-align: center;
-  padding:10px;
-}
-
-.laimagen{
-  position: absolute;
-  width:40px;
-  object-fit: cover;
-  z-index: -100;
-  margin-top: -7px;
-  margin-left: -10px;
+.fa-store,  .pr-2{
+  margin-right: 10px;
 }

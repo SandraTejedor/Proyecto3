@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Col from "react-bootstrap/Col";
 import ResultService from "../../service/Results.service";
 
-//import { Link } from "react-router-dom";
-
 import imagenestrella from "./../../../src/images/estrell-trans.png";
 
 class EuromillonCard extends Component {
@@ -16,9 +14,6 @@ class EuromillonCard extends Component {
     };
   }
 
-  //state con la info de la card
-
-  //cuando se monte llamar al servicio y actualizar el state
   componentDidMount = () => this.updateEuromillonList();
 
   updateEuromillonList = () => {
@@ -28,7 +23,6 @@ class EuromillonCard extends Component {
       .catch(err => console.log("Error", err));
   };
 
-  //pintar la carta con el state
   render() {
     return this.state.euromillon ? (
       <Col className="coaster-card" md={5}>
