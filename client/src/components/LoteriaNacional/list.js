@@ -14,7 +14,8 @@ class NationalList extends React.Component {
     this._nationalService = new NationalService();
     this.state = {
       nacional: [],
-      otro: ""
+      otro: "",
+      search: ""
     };
   }
 
@@ -32,12 +33,31 @@ class NationalList extends React.Component {
       .then(x => this.updateNationalList())
       .catch(err => console.log("Error", err));
   };
-
+  handleSearchChange = e => this.setState({ search: e.target.value });
   render() {
+    const filterItems = () => {
+      let buscar = this.state.search;
+      return this.state.nacional.filter(
+        el =>
+          el.numero.toLowerCase().indexOf(buscar.toLowerCase()) > -1 ||
+          el.fechaSorteo.toLowerCase().indexOf(buscar.toLowerCase()) > -1
+      );
+    };
     return (
       <section>
         <Container>
           <h1>Décimos disponibles online:</h1>
+          <div className="form-group">
+            <label htmlFor="search">Buscar por número</label>
+            <input
+              name="search"
+              type="text"
+              className="form-control"
+              id="search"
+              value={this.state.search}
+              onChange={this.handleSearchChange}
+            />
+          </div>
 
           <Row>
             {/* {this.state.nacional.map(nacional => (
@@ -48,7 +68,7 @@ class NationalList extends React.Component {
                 updateNationalList={this.updateNationalList}
               />
             )).sort()} */}
-            {this.state.nacional
+            {filterItems()
               .sort((a, b) => {
                 if (a.fechaSorteo > b.fechaSorteo) {
                   return 1;
