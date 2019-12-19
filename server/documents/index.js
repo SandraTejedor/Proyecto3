@@ -17,31 +17,31 @@ module.exports = (num1, num2, num3, num4, num5, { serie, fraccion }) => {
         }
         .number {
             position: absolute;
-            top: -8%;
+            top: -9%;
             left: 34%;
             font-size: 20vh;
         }
         .number2 {
             position: absolute;
-            top: -8%;
+            top: -9%;
             left: 42%;
             font-size: 20vh;
         }
         .number3 {
             position: absolute;
-            top: -8%;
+            top: -9%;
             left: 50%;
             font-size: 20vh;
         }
         .number4 {
             position: absolute;
-            top: -8%;
+            top: -9%;
             left: 58%;
             font-size: 20vh;
         }
         .number5 {
             position: absolute;
-            top: -8%;
+            top: -9%;
             left: 66%;
             font-size: 20vh;
         }
