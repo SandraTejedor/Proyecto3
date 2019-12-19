@@ -33,6 +33,7 @@ class JuegosGordoCard extends Component {
         <Button
           variant="dark"
           onClick={() => this.props.delete(this.props._id)}
+          className="botonTramitar"
         >
           Pedido realizado
         </Button>

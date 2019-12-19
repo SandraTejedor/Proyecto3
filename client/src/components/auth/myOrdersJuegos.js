@@ -2,7 +2,7 @@ import React from "react";
 
 import JuegosService from "../../service/Juegos.service";
 
-import { Container, Row, Button, Modal } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 
 import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-cardSold";
 import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-cardSold";
@@ -73,6 +73,7 @@ class MyNationalOrder extends React.Component {
           <h1>
             Lista de pedidos de {this.props.loggedInUser.username} de Juegos:
           </h1>
+          <br></br>
           <h4 className="">Bonolotos pedidos</h4>
           <Row>
             {this.state.bonoloto.map(bonoloto => (
@@ -84,6 +85,7 @@ class MyNationalOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Primitivas pedidos</h4>
           <Row>
             {this.state.primitiva.map(primitiva => (
@@ -95,6 +97,7 @@ class MyNationalOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Gordos pedidos</h4>
           <Row>
             {this.state.gordo.map(gordo => (
@@ -106,6 +109,7 @@ class MyNationalOrder extends React.Component {
               />
             ))}
           </Row>
+          <hr></hr>
           <h4 className="">Euromillones pedidos</h4>
           <Row>
             {this.state.euromillon.map(euromillon => (

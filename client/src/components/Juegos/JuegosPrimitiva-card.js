@@ -20,6 +20,7 @@ class JuegosPrimitivaCard extends Component {
   render() {
     return (
       <Col className="coaster-card" md={5}>
+        <br></br>
         <p>Fecha: {this.props.primitiva.fecha} </p>
         <p>Reintegro: {this.props.primitiva.reintegro} </p>{" "}
         <p>Joker: {this.props.primitiva.joker} </p>
@@ -36,6 +37,7 @@ class JuegosPrimitivaCard extends Component {
         <Button
           variant="dark"
           onClick={() => this.props.delete(this.props._id)}
+          className="botonTramitar"
         >
           Pedido realizado
         </Button>

@@ -102,7 +102,7 @@ class AddLottery extends Component {
             <Button variant="dark" type="submit">
               Crear
             </Button>
-            <Link to="/" className="btn btn-dark">
+            <Link to="/" className="btn btn-dark botonVolver">
               Volver
             </Link>
           </div>

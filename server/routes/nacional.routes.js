@@ -3,6 +3,10 @@ const router = express.Router();
 const Nacional = require("../models/LoteriaNacional.model");
 const OrderNacional = require("../models/OrderNacional.model");
 const mailer = require("../configs/nodemailer.config");
+const pdf = require("html-pdf");
+const pdfTemplate = require("../documents");
+
+
 
 //permite al vendedor borrar los decimos que ya no quiere que esten a la venta
 router.get("/delete/:id", (req, res) => {
@@ -37,24 +41,41 @@ router.get("/sold", (req, res) => {
 
 //borra los pedidos que ya se han realizado y mando el email al usuario con el decimo
 
-router.post("/deleteOrder/:id", (req, res) => {
-  console.log("soy el file", req.file, req);
+router.post("/create-pdf", (req, res) => {
+  let template = pdfTemplate();
 
-  // OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
-  //   // .then(() => res.json({ message: "el cambio ok" }))
-  //   // .then(x=>console.log(x , "el user email", x.user.email))
-  //   .then(x => {
-  //     mailer.sendMail({
-  //       from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
-  //       to: x.user.email,
-  //       subject: `Aquí está tu décimo de ${x.fechaSorteo}`,
-  //       // attachments: [pdfBase64],
-  //       text: `Querid@ ${x.user.username},  aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}`,
-  //       html: `<p>Querid@ ${x.user.username}, aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}</p>`
-  //     });
-  //   })
-  //   .then(() => res.json({ message: "el cambio ok" }))
-  //   .catch(err => console.log("soy el error del email", err));
+  pdf.create(template, {}).toFile("routes/result.pdf", err => {
+    if (err) {
+      console.log("error");
+      res.send(Promise.reject);
+    }
+    res.send(Promise.resolve());
+  });
+});
+
+router.post("/deleteOrder/:id", (req, res) => {
+  // console.log("soy el file", req.file, req);
+
+  OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
+    // .then(() => res.json({ message: "el cambio ok" }))
+    // .then(x=>console.log(x , "el user email", x.user.email))
+    .then(x => {
+      mailer.sendMail({
+        from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
+        to: x.user.email,
+        subject: `Aquí está tu décimo de ${x.fechaSorteo}`,
+        attachments: [
+          {
+            filename: "decimo.pdf",
+            path: `${__dirname}/result.pdf`
+          }
+        ],
+        text: `Querid@ ${x.user.username},  aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}`,
+        html: `<p>Querid@ ${x.user.username}, aquí está el décimo con número ${x.numero} que jugarás en el sorteo de ${x.fechaSorteo}</p>`
+      });
+    })
+    .then(() => res.sendFile(`${__dirname}/result.pdf`))
+    .catch(err => console.log("soy el error del email", err));
 });
 
 //los pedidos de cada usuario

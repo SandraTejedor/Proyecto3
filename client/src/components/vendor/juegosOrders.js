@@ -2,7 +2,7 @@ import React from "react";
 
 import JuegosService from "../../service/Juegos.service";
 
-import { Container, Row, Button, Modal } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-card";
 import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-card";
@@ -98,6 +98,7 @@ class JuegosOrder extends React.Component {
       <section>
         <Container>
           <h1>Lista de pedidos de Juegos:</h1>
+          
           <h4 className="">Bonolotos pendientes</h4>
           <Row>
             {this.state.bonoloto.map(bonoloto => (

@@ -44,6 +44,9 @@ import JuegosSold from "./components/vendor/juegosSold";
 
 import MyJuegosOrder from "./components/auth/myOrdersJuegos";
 
+
+import PdfCreator from "./components/vendor/PdfCreator";
+
 class App extends Component {
   constructor() {
     super();
@@ -296,10 +299,11 @@ class App extends Component {
                   loggedInUser={this.state.loggedInUser}
                 />
               ) : (
-                    <Redirect to="/" />
-                  )
+                <Redirect to="/" />
+              )
             }
           />
+          <Route exact path="/pdf" component={PdfCreator} />
         </Switch>
       </>
     );

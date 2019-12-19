@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Button, Modal, Col } from "react-bootstrap";
+import { Button, Col } from "react-bootstrap";
 
 import NationalService from "../../service/Nacional.service";
 
@@ -26,6 +26,7 @@ class NationalCard extends Component {
         <Button
           variant="dark"
           onClick={() => this.props.delete(this.props._id)}
+          className="botonTramitar"
         >
           Darlo de baja
         </Button>

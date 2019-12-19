@@ -174,7 +174,7 @@ class BuyLottery extends Component {
             <Button variant="dark" type="submit">
               Pedir
             </Button>
-            <Link to="/" className="btn btn-dark">
+            <Link to="/" className="btn btn-dark botonVolver">
               Volver
             </Link>
           </div>

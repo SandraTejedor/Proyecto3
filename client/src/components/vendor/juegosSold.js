@@ -2,7 +2,7 @@ import React from "react";
 
 import JuegosService from "../../service/Juegos.service";
 
-import { Container, Row, Button, Modal } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import BonolotoOrderCard from "../../components/Juegos/JuegosBonoloto-cardSold";
 import PrimitivaOrderCard from "../../components/Juegos/JuegosPrimitiva-cardSold";

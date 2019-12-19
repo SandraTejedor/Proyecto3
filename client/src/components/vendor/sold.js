@@ -2,7 +2,7 @@ import React from "react";
 
 import NationalService from "../../service/Nacional.service";
 
-import { Container, Row, Button, Modal } from "react-bootstrap";
+import { Container, Row} from "react-bootstrap";
 
 import NationalOrderCard from "../LoteriaNacional/Sold-Card";
 

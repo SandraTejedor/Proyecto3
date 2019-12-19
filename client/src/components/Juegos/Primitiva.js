@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Button, Row, Col, Form, Toast } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 import PrimitivaService from "../../service/Juegos.service";
 class Primitiva extends Component {

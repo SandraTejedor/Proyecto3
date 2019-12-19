@@ -39,7 +39,7 @@ class EuromillonCard extends Component {
           <span key={index} className="estrellasEuro ">
             <span>
               {" "}
-              <img src={imagenestrella} className="laimagen" />
+              <img src={imagenestrella} className="laimagen" alt="imagen estrella"/>
             </span>
             {euro}{" "}
           </span>

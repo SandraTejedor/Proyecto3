@@ -1,7 +1,7 @@
 body {
   font-weight: 100;
   /* background-color: #ffedcf; */
-  background-color: #FFEDD3
+  background-color: #ffedda;
 }
 
 h1,
@@ -12,6 +12,10 @@ h5,
 h6 {
   font-weight: 100;
   margin: 20px 0;
+  
+}
+h1, h2, h3{
+font-family: 'Zilla Slab', serif;
 }
 
 section {
@@ -24,10 +28,12 @@ section {
 
 .laQuiniela {
   display: flex;
+  margin-left:60px
 }
 
 .elQuinigol {
   display: flex;
+  margin-left:60px
 }
 
 .form-group {
@@ -310,13 +316,18 @@ ol {
 
 .imgNav {
   width: 60px;
-  height:80%;
+  height: 80%;
   margin-right: 15px;
 }
 
 .navbar {
   font-size: 22px;
   height: 95px;
+  font-family: 'Zilla Slab', serif;
+
+}
+.bg-dark{
+  background-color: red;
 }
 
 .imgInicio {
@@ -332,6 +343,24 @@ ol {
   justify-content: center;
 }
 
-.fa-store,  .pr-2{
+.fa-store,
+.pr-2 {
   margin-right: 10px;
 }
+
+
+.btn{
+  margin-left:350px;
+  background-color: #343A40;
+}
+
+.botonVolver{
+  margin-left:50px;
+  background-color: #343A40;
+}
+
+.botonTramitar{
+  margin-left: 0px;
+  background-color: #343A40;
+}
+

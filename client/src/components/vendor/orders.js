@@ -2,10 +2,10 @@ import React from "react";
 
 import NationalService from "../../service/Nacional.service";
 
-import { Container, Row, Button, Modal } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import NationalOrderCard from "../../components/LoteriaNacional/NacionalOrder-Card";
-import jsPDF from "jspdf";
+// import jsPDF from "jspdf";
 
 class NationalOrder extends React.Component {
   constructor(props) {
@@ -30,13 +30,13 @@ class NationalOrder extends React.Component {
   };
 
   deleteHandler = id => {
-    let pdf = new jsPDF();
-    pdf.text(0, 0, "Hello World!");
-    let pdfBase64 = pdf.output("arraybuffer");
-    console.log(pdfBase64);
+    // let pdf = new jsPDF();
+    // pdf.text(0, 0, "Hello World!");
+    // let pdfBase64 = pdf.output("arraybuffer");
+    // console.log(pdfBase64);
 
     this._nationalService
-      .deleteOrder(id, pdfBase64)
+      .deleteOrder(id)
       .then(x => {
         // console.log("estoy haciendo el console log");
         this.updateNationalList();
