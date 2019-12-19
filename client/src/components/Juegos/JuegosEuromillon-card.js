@@ -19,7 +19,7 @@ class JuegosEuromillonCard extends Component {
   //pintar la carta con el state
   render() {
     return (
-      <Col className="coaster-card" md={5}>
+      <Col className="coaster-card" md={4}>
         <p>Fecha: {this.props.euromillon.fecha} </p>
         <p>
           Columna 1: {this.props.euromillon.numeros[1].join(" ")} | Estrellas:{" "}

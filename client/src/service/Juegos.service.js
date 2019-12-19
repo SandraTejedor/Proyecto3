@@ -20,8 +20,12 @@ export default class JuegosServices {
   getprimitiva = primitiva => this._service.get("/primitiva", primitiva);
   getprimitivaSold = primitivaSold =>
     this._service.get("/primitivaSold", primitivaSold);
-  deletePrimiOrder = deletePrimiOrder =>
-    this._service.get(`/deletePrimiOrder/${deletePrimiOrder}`);
+  deletePrimiOrder = deletePrimiOrder => {
+    return this._service.post(`/create-pdf/${deletePrimiOrder}`).then(() => {
+      return this._service.get(`/deletePrimiOrder/${deletePrimiOrder}`);
+    });
+  };
+
   myOrderListPrimi = myOrderListPrimi =>
     this._service.get("/myOrderListPrimi", myOrderListPrimi);
   gordo = gordo => this._service.post("/gordo", gordo);

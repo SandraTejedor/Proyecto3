@@ -6,6 +6,9 @@ const JuegosPrimitiva = require("../models/JuegoPrimitiva.model");
 const JuegosGordo = require("../models/JuegoGordo.model");
 const mailer = require("../configs/nodemailer.config");
 
+const pdf = require("html-pdf");
+const pdfTemplate = require("../documents/indexBoleto");
+
 //BONOLOTO
 
 //añade los bonolotos pedidos a la base de datos
@@ -93,6 +96,34 @@ router.get("/primitivaSold", (req, res) => {
     .catch(err => console.log("DB error", err));
 });
 
+//genera el pdf y le pasa el numero y todo el objeto para que coja la serie y la fraccion
+router.post("/create-pdf/:id", (req, res) => {
+  JuegosPrimitiva.findById(req.params.id).then(x => {
+    console.log(
+      "el numero 2 es ",
+      x.primitiva.numeros[1][0], 
+      "el reintegro",
+      x.primitiva.reintegro
+    );
+    let num1 = x.primitiva.numeros[1][0];
+    let num2 = x.primitiva.numeros[1][1];
+    let num3 = x.primitiva.numeros[1][2];
+    let num4 = x.primitiva.numeros[1][3];
+    let num5 = x.primitiva.numeros[1][4];
+    let num6 = x.primitiva.numeros[1][5];
+    let reintegro = x.primitiva.reintegro;
+    let template = pdfTemplate(num1, num2, num3, num4, num5, num6, reintegro);
+
+    pdf.create(template, {}).toFile("routes/result2.pdf", err => {
+      if (err) {
+        console.log("error");
+        res.send(Promise.reject);
+      }
+      res.send(Promise.resolve());
+    });
+  });
+});
+
 //cambia el estado de las primitivas de pendiente a vendido
 router.get("/deletePrimiOrder/:id", (req, res) => {
   JuegosPrimitiva.findByIdAndUpdate(req.params.id, {
@@ -105,6 +136,12 @@ router.get("/deletePrimiOrder/:id", (req, res) => {
         from: '"El Calvo de la Lotería" <info@elcalvodelaloteria.es>',
         to: x.primitiva.user.email,
         subject: `Aquí está tu primitiva de ${x.primitiva.fecha}`,
+        attachments: [
+          {
+            filename: "boleto.pdf",
+            path: `${__dirname}/result2.pdf`
+          }
+        ],
         text: `Querid@ ${
           x.primitiva.user.username
         },  aquí está tu primitiva con números ${x.primitiva.numeros[1].join(
@@ -117,7 +154,7 @@ router.get("/deletePrimiOrder/:id", (req, res) => {
         )} y reintegro ${x.primitiva.reintegro}</p>`
       });
     })
-    .then(() => res.json({ message: "el cambio ok" }))
+    .then(() => res.sendFile(`${__dirname}/result2.pdf`))
     .catch(err => console.log("soy el error del email", err));
 });
 

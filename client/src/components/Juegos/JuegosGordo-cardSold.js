@@ -19,7 +19,7 @@ class JuegosGordoCard extends Component {
   //pintar la carta con el state
   render() {
     return (
-      <Col className="coaster-card" md={4}>
+      <Col className="coaster-card" md={3}>
         <p>Fecha: {this.props.gordo.fecha} </p>
         <p>NºClave: {this.props.gordo.clave} </p>{" "}
         <p>Columna 1: {this.props.gordo.numeros[1].join(" ")}</p>

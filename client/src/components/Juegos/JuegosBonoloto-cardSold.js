@@ -19,7 +19,7 @@ class JuegosBonolotoCard extends Component {
   //pintar la carta con el state
   render() {
     return (
-      <Col className="coaster-card" md={4}>
+      <Col className="coaster-card" md={3}>
         <p>Fecha: {this.props.bonoloto.fecha} </p>
         <p>Columna 1: {this.props.bonoloto.numeros[1].join(" ")}</p>
         <p>Columna 2: {this.props.bonoloto.numeros[2].join(" ")}</p>

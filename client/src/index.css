@@ -364,3 +364,10 @@ ol {
   background-color: #343A40;
 }
 
+.coaster-card {
+  border: grey 1px dashed;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

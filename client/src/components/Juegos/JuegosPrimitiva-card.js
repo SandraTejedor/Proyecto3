@@ -19,7 +19,7 @@ class JuegosPrimitivaCard extends Component {
   //pintar la carta con el state
   render() {
     return (
-      <Col className="coaster-card" md={5}>
+      <Col className="coaster-card" md={4}>
         <br></br>
         <p>Fecha: {this.props.primitiva.fecha} </p>
         <p>Reintegro: {this.props.primitiva.reintegro} </p>{" "}
