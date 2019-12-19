@@ -44,7 +44,6 @@ import JuegosSold from "./components/vendor/juegosSold";
 
 import MyJuegosOrder from "./components/auth/myOrdersJuegos";
 
-
 import PdfCreator from "./components/vendor/PdfCreator";
 
 class App extends Component {
@@ -158,7 +157,7 @@ class App extends Component {
             path="/juegos/elGordo"
             render={match =>
               this.state.loggedInUser == null ? (
-                <Redirect to="/juegos/gordo" />
+                <Redirect to="/juegos/elGordo" />
               ) : this.state.loggedInUser ? (
                 <ElGordo setUser={this.setTheUser} {...match} />
               ) : (
