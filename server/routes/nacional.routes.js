@@ -6,8 +6,6 @@ const mailer = require("../configs/nodemailer.config");
 const pdf = require("html-pdf");
 const pdfTemplate = require("../documents");
 
-
-
 //permite al vendedor borrar los decimos que ya no quiere que esten a la venta
 router.get("/delete/:id", (req, res) => {
   Nacional.findByIdAndDelete(req.params.id)
@@ -39,23 +37,28 @@ router.get("/sold", (req, res) => {
     .catch(err => console.log("DB error", err));
 });
 
-//borra los pedidos que ya se han realizado y mando el email al usuario con el decimo
+//genera el pdf y le pasa el numero y todo el objeto para que coja la serie y la fraccion
+router.post("/create-pdf/:id", (req, res) => {
+  OrderNacional.findById(req.params.id).then(x => {
+    let num1 = x.numero.charAt(0);
+    let num2 = x.numero.charAt(1);
+    let num3 = x.numero.charAt(2);
+    let num4 = x.numero.charAt(3);
+    let num5 = x.numero.charAt(4);
+    let template = pdfTemplate(num1, num2, num3, num4, num5, x);
 
-router.post("/create-pdf", (req, res) => {
-  let template = pdfTemplate();
-
-  pdf.create(template, {}).toFile("routes/result.pdf", err => {
-    if (err) {
-      console.log("error");
-      res.send(Promise.reject);
-    }
-    res.send(Promise.resolve());
+    pdf.create(template, {}).toFile("routes/result.pdf", err => {
+      if (err) {
+        console.log("error");
+        res.send(Promise.reject);
+      }
+      res.send(Promise.resolve());
+    });
   });
 });
 
+//borra los pedidos que ya se han realizado y mando el email al usuario con el decimo
 router.post("/deleteOrder/:id", (req, res) => {
-  // console.log("soy el file", req.file, req);
-
   OrderNacional.findByIdAndUpdate(req.params.id, { status: "vendido" })
     // .then(() => res.json({ message: "el cambio ok" }))
     // .then(x=>console.log(x , "el user email", x.user.email))

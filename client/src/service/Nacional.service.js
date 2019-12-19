@@ -14,7 +14,7 @@ export default class Services {
   delete = nacionalList => this._service.get(`/delete/${nacionalList}`);
   nacionalOrder = nacionalOrder => this._service.get("/order", nacionalOrder);
   deleteOrder = deleteOrder => {
-    this._service.post(`/create-pdf`);
+    this._service.post(`/create-pdf/${deleteOrder}`);
 
     return this._service.post(`/deleteOrder/${deleteOrder}`);
   };
