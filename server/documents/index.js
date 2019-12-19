@@ -57,6 +57,9 @@ module.exports = (num1, num2, num3, num4, num5, { serie, fraccion }) => {
             left: 83.5%;
             font-size: 7vh;
         }
+        .logo{
+              width: 20%;
+        }
     </style>
 </head>
 
@@ -71,6 +74,14 @@ module.exports = (num1, num2, num3, num4, num5, { serie, fraccion }) => {
         <p class="number5">${num5}</p> 
         <p class="serie">${serie}ª</p>
         <p class="fraccion">${fraccion}ª</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container2">
+        <h5>Atentamente:</h5>
+        <img class="logo" src="https://res.cloudinary.com/sandratejedor/image/upload/v1576758210/webmad1019/Layer_ynbyza.png" alt="logo" >
+        <a href="https://elcalvodelaloteria.herokuapp.com/"></a>
     </div>
 
 </body>
