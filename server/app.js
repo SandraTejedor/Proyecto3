@@ -2,8 +2,6 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const favicon = require("express-favicon");
-app.use(favicon(__dirname + "/build/favicon.ico"));
 
 require("./configs/mongoose.config");
 require("./configs/debugger.config");
