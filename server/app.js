@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+const favicon = require("express-favicon");
+app.use(favicon(__dirname + "/build/favicon.ico"));
 
 require("./configs/mongoose.config");
 require("./configs/debugger.config");
@@ -15,12 +17,10 @@ app.use("/api/results", require("./routes/results.routes"));
 app.use("/api/nacional", require("./routes/nacional.routes"));
 app.use("/api/juegos", require("./routes/juegos.routes"));
 
-
 //para heroku
 
-app.use((req, res)=>{
-    res.sendFile(__dirname + "/public/index.html");
-})
-
+app.use((req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 module.exports = app;
