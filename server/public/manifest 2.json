@@ -1,6 +1,6 @@
 {
-  "short_name": "Calvo Lotería",
-  "name": "El Calvo de la Lotería",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
