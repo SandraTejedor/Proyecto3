@@ -77,8 +77,6 @@ module.exports = (num1, num2, num3, num4, num5, num6, reintegro) => {
         <p class="reintegro">${reintegro}</p>
     </div>
     <br>
-    <br>
-    <br>
     <div class="container2">
         <h5>Atentamente:</h5>
         <img class="logo"
