@@ -50,6 +50,7 @@ class ElGordo extends Component {
     let copia = { ...this.state.gordo.numeros };
     if (copia[columna].length < 5) {
       e.target.innerHTML = "X";
+      e.target.style.color = "black";
       copia[columna].push(valor);
     }
     this.setState({

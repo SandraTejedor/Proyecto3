@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Col,
-  Row,
-  Button,
-  Form,
-  Toast
-} from "react-bootstrap";
+import { Container, Col, Row, Button, Form, Toast } from "react-bootstrap";
 
 import BonolotoService from "../../service/Juegos.service";
 class BonoLoto extends Component {
@@ -36,6 +29,7 @@ class BonoLoto extends Component {
     e.preventDefault();
     this._bonolotoService.bonoloto(this.state.bonoloto);
     this.handleToastOpen("se crea el pedido");
+    //this.props.history.push("/juegos/bonoLoto");
   };
 
   handleClick = e => {
@@ -58,6 +52,7 @@ class BonoLoto extends Component {
     let copia = { ...this.state.bonoloto.numeros };
     if (copia[columna].length < 6) {
       e.target.innerHTML = "X";
+      e.target.style.color = "black";
       copia[columna].push(valor);
     }
     this.setState({

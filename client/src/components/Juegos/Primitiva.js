@@ -27,12 +27,11 @@ class Primitiva extends Component {
       }
     };
   }
- 
+
   handleSubmit = e => {
     e.preventDefault();
     this._primitivaService.primitiva(this.state.primitiva);
     this.handleToastOpen("se crea el pedido");
-  
   };
 
   handleClick = e => {
@@ -50,12 +49,12 @@ class Primitiva extends Component {
   handleToastOpen = text => this.setState({ showToast: true, toastText: text });
 
   handleDiv = e => {
-
     let columna = e.target.getAttribute("name");
     let valor = e.target.getAttribute("value");
     let copia = { ...this.state.primitiva.numeros };
     if (copia[columna].length < 6) {
       e.target.innerHTML = "X";
+      e.target.style.color = "black";
       copia[columna].push(valor);
     }
     this.setState({

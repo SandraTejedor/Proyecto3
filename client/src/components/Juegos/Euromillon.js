@@ -70,6 +70,7 @@ class Euromillon extends Component {
     let copia = { ...this.state.euromillon.estrellas };
     if (copia[columna].length < 2) {
       e.target.innerHTML = "X";
+      e.target.style.color = "black";
       copia[columna].push(valor);
     }
     this.setState({
