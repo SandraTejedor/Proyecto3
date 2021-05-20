@@ -23,7 +23,7 @@
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "hbs": "^4.0.1",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "jspdf": "^1.5.3",
     "jspdf-react": "^1.0.11",
     "jszip": "^2.6.1",
